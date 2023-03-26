@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixins';
+
+/* semantic color variables for this project */
+:root {
+  --color-background: #{$white};
+  --color-background-soft: #{$whiteSoft};
+  --color-background-mute: #{$whiteMute};
+
+  --color-border: #{$dividerLight2};
+
+  --color-heading: #{$textLight1};
+  --color-text: #{$indigo};
+
+  --section-gap: 160px;
+
+  --color-link: #{$indigo};
+  --color-link-hover: #{$textDark1};
+}
+
+// dark theme
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #{$black};
+    --color-background-soft: #{$blackSoft};
+    --color-background-mute: #{$blackMute};
+
+    --color-border: #{$dividerDark2};
+    --color-border-hover: #{$dividerDark1};
+
+    --color-heading: #{$white};
+    --color-text: #{$textDark1};
+
+    --color-link: #{$indigo};
+    --color-link-hover: #{$white};
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include fontBody;
+}
+
+// headings
+h1 {
+  @include fontHeading1;
+}
+
+h2 {
+  @include fontHeading2;
+}
+
+h3 {
+  @include fontHeading3;
+}
+
+h4 {
+  @include fontHeading4;
+}
+
+h5 {
+  @include fontHeading5;
+}
+
+// links
+a:link,
+a:visited {
+  transition: color 200ms ease;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+
+a:active {
+  outline: none;
+}
