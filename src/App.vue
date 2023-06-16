@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
       <div class="portfolio__navigation">
         Navigation
-        <nav>
+        <nav class="navigation-links">
           <RouterLink class="navigation-link" to="/">Home</RouterLink>
           <RouterLink class="navigation-link" to="/about">About</RouterLink>
         </nav>
@@ -22,18 +22,32 @@ import { RouterLink, RouterView } from 'vue-router';
 </template>
 
 <style lang="scss" scoped>
+@import './assets/stylesheets/mixins';
 
 .portfolio {
   display: flex;
   gap: 50px;
-  margin: 50px auto 0 auto;
-  max-width: 1630px;
+  flex-direction: column;
+  margin: 50px 20px 0;
+  max-width: 1600px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
   box-shadow: 10px 5px 5px var(--color-border);
   overflow: auto;
   background: var(--color-background-soft);
   padding: 20px;
+
+  @include smallScreens {
+    margin: 50px 50px 0;
+  }
+
+  @include mediumScreens {
+    flex-direction: row;
+  }
+
+  @include extraLargeScreens {
+    margin: 50px auto 0 auto;
+  }
 
   &__header,
   &__content {
@@ -63,9 +77,19 @@ import { RouterLink, RouterView } from 'vue-router';
     justify-content: center;
     background-color: var(--color-background-mute);
     width: 100%;
+    max-width: 498px;
     border-radius: 16px;
     padding: 10px 6px;
     margin-top: 14px;
+
+    .navigation-links {
+      display: flex;
+      flex-direction: column;
+      @include smallScreens {
+        flex-direction: row;
+      }
+    }
+
     .navigation-link {
       margin-right: 8px;
     }
