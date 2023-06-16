@@ -3,15 +3,26 @@
 </script>
 
 <template>
-  <section>
-    <h1>Welcome</h1>
-    <span class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, minima alias facere quis vero deserunt sunt saepe cum non quaerat veritatis. Repellat similique fuga voluptatibus recusandae distinctio autem maiores atque!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, saepe eaque dolorum facilis sunt magnam debitis quis. Deserunt voluptate itaque provident, sit iusto ut fugiat beatae corporis reiciendis officiis repellat?
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores molestiae consequuntur ducimus nobis voluptas, tempore tempora earum natus doloremque aliquid amet architecto totam autem vitae excepturi. Cupiditate, sunt! Voluptatum, quis?
-    </span>
+  <section class="welcome">
+    <h1>Hello, I'm Monica</h1>
+    <div class="welcome__description">
+      <p>
+        Being a passionate Front End Developer is more than just a job for me; it's a deep-rooted enthusiasm that fuels my creativity and drive.
+      </p>
+      <p>
+        I find immense joy in the art of crafting visually stunning and highly functional websites that engage users and leave a lasting impact. 
+      </p>
+      <p>
+        I strive to make the web a better place, one pixel at a time.
+      </p>
+    </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-
+  .welcome {
+    &__description {
+      max-width: 650px;
+    }
+  }
 </style>
