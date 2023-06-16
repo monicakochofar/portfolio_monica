@@ -25,6 +25,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
 .portfolio {
   display: flex;
+  gap: 50px;
   margin: 50px auto 0 auto;
   max-width: 1630px;
   border: 1px solid var(--color-border);
@@ -48,6 +49,9 @@ import { RouterLink, RouterView } from 'vue-router';
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 2;
     padding: 20px;
   }
