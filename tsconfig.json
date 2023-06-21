@@ -3,6 +3,7 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
     "baseUrl": ".",
+    "moduleResolution": "Node",
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -10,7 +11,7 @@
 
   "references": [
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.vite.json"
     }
   ]
 }

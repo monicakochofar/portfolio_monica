@@ -10,10 +10,10 @@
         Being a passionate Front End Developer is more than just a job for me; it's a deep-rooted enthusiasm that fuels my creativity and drive.
       </p>
       <p>
-        I find immense joy in the art of crafting visually stunning and highly functional websites that engage users and leave a lasting impact. 
+        I have a desire for growth and opportunity. Each role that I have had gives me the opportunity to learn, take on more responsiblity, and diversify my skillset.
       </p>
       <p>
-        I strive to make the web a better place, one pixel at a time.
+        My experiences have given me the confidence to know that I can step into any role and provide value for my team.
       </p>
     </div>
   </section>

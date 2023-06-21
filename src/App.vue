@@ -1,33 +1,51 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import { onBeforeMount } from 'vue';
+import 'inline-svg';
+
+onBeforeMount(() => {
+
+  inlineSVG.init({
+    svgSelector: 'img.svg', // the class attached to all images that should be inlined
+    initClass: 'js-inlinesvg', // class added to <html>
+  }, function () {
+    console.log('All SVGs inlined');
+  });
+});
+
 </script>
 
 <template>
-  <main class="portfolio">
-    <header class="portfolio__header">
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <main>
 
-      <div class="portfolio__navigation">
-        Navigation
-        <nav class="navigation-links">
-          <RouterLink class="navigation-link" to="/">Home</RouterLink>
-          <RouterLink class="navigation-link" to="/about">About</RouterLink>
-        </nav>
-      </div>
-    </header>
+    <section class="portfolio container">
+      <header class="portfolio__header">
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+        <div class="portfolio__navigation">
+          Navigation
+          <nav class="navigation-links">
+            <RouterLink class="navigation-link" to="/">Home</RouterLink>
+            <RouterLink class="navigation-link" to="/experience">Experience</RouterLink>
+          </nav>
+        </div>
+      </header>
+      <!-- Router output -->
+      <RouterView class="portfolio__content" />
+    </section>
 
-    <!-- Router output -->
-    <RouterView class="portfolio__content" />
+
+    <section class="companies container">
+      <h2>Companies I have worked with:</h2>
+      
+    </section>
+
   </main>
 </template>
 
 <style lang="scss" scoped>
 @import './assets/stylesheets/mixins';
 
-.portfolio {
-  display: flex;
-  gap: 50px;
-  flex-direction: column;
+.container {
   margin: 50px 20px 0;
   max-width: 1600px;
   border: 1px solid var(--color-border);
@@ -42,11 +60,23 @@ import { RouterLink, RouterView } from 'vue-router';
   }
 
   @include mediumScreens {
-    flex-direction: row;
+    max-height: 368px;
   }
 
   @include extraLargeScreens {
     margin: 50px auto 0 auto;
+  }
+
+}
+
+.portfolio {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+
+  @include mediumScreens {
+    flex-direction: row;
+    height: 368px;
   }
 
   &__header,
@@ -68,6 +98,7 @@ import { RouterLink, RouterView } from 'vue-router';
     justify-content: center;
     flex: 2;
     padding: 20px;
+    overflow-y: auto;
   }
 
   &__navigation {
