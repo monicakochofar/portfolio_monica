@@ -45,10 +45,10 @@ onBeforeMount(() => {
     </section>
 
 
-    <section class="companies container">
+    <!-- <section class="companies container">
       <h2>Companies I have worked with:</h2>
       
-    </section>
+    </section> -->
 
   </main>
 </template>
