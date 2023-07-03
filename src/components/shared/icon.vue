@@ -5,16 +5,12 @@
     name: {
       type: String,
       required: true,
-    },
+    }
   });
 
   const icon = defineAsyncComponent(() =>
-    import(`../assets/svg/${props.name}.svg`)
+    import(`/src/assets/images/${props.name}.svg`)
   );
-
-  export default {
-    icon,
-  }
 </script>
 
 <template>

@@ -19,13 +19,25 @@ onBeforeMount(() => {
 
     <section class="portfolio container">
       <header class="portfolio__header">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+        <icon name="logo" width="125" height="125"></icon>
         <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
             <RouterLink class="navigation-link" to="/">Home</RouterLink>
             <RouterLink class="navigation-link" to="/experience">Experience</RouterLink>
           </nav>
+        </div>
+        <div class="portfolio__links">
+          Socials:
+          <a href="https://github.com/monicakochofar" target="_blank">
+              <icon name="github-white" width="20" height="20"></icon>
+          </a>          
+          <a href="https://ca.linkedin.com/in/monicakochofar" target="_blank">
+            <icon name="linkedin" width="20" height="20"></icon>
+          </a>
+          <a href="https://mkay11.medium.com/" target="_blank">
+            <icon name="medium" width="20" height="20"></icon>
+          </a>
         </div>
       </header>
       <!-- Router output -->
@@ -43,30 +55,6 @@ onBeforeMount(() => {
 
 <style lang="scss" scoped>
 @import './assets/stylesheets/mixins';
-
-.container {
-  margin: 50px 20px 0;
-  max-width: 1600px;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  box-shadow: 10px 5px 5px var(--color-border);
-  overflow: auto;
-  background: var(--color-background-soft);
-  padding: 20px;
-
-  @include smallScreens {
-    margin: 50px 50px 0;
-  }
-
-  @include mediumScreens {
-    max-height: 368px;
-  }
-
-  @include extraLargeScreens {
-    margin: 50px auto 0 auto;
-  }
-
-}
 
 .portfolio {
   display: flex;
@@ -122,6 +110,26 @@ onBeforeMount(() => {
 
     .navigation-link {
       margin-right: 8px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 8px;
+    background-color: var(--color-background-mute);
+    width: 100%;
+    max-width: 498px;
+
+    a {
+      color: unset;
+      height: 20px;
+    }
+    a:hover {
+      color: var(--color-link);
     }
   }
 }

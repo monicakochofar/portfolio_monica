@@ -2,6 +2,10 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "noImplicitAny": false,
+    "allowJs": true,
+    "verbatimModuleSyntax": true,
+    "ignoreDeprecations": "5.0", // TODO: when node18-strictest-esm is updated for typescript 5 remove this
     "baseUrl": ".",
     "moduleResolution": "Node",
     "paths": {
