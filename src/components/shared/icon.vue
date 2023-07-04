@@ -5,6 +5,10 @@
     name: {
       type: String,
       required: true,
+    },
+    customClass: {
+      type: String,
+      required: false
     }
   });
 
@@ -14,5 +18,5 @@
 </script>
 
 <template>
-  <component :is="icon" class="fill-current" />
+  <component :is="icon" :class="props.customClass" />
 </template>

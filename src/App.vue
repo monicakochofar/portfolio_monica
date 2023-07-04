@@ -1,17 +1,5 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import { onBeforeMount } from 'vue';
-
-onBeforeMount(() => {
-
-  // inlineSVG.init({
-  //   svgSelector: 'img.svg', // the class attached to all images that should be inlined
-  //   initClass: 'js-inlinesvg', // class added to <html>
-  // }, function () {
-  //   console.log('All SVGs inlined');
-  // });
-});
-
+<script setup>
+  import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
@@ -19,7 +7,7 @@ onBeforeMount(() => {
 
     <section class="portfolio container">
       <header class="portfolio__header">
-        <icon name="logo" width="125" height="125"></icon>
+        <icon custom-class="site-logo" name="logo" width="125" height="125"></icon>
         <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
@@ -60,6 +48,7 @@ onBeforeMount(() => {
   display: flex;
   gap: 50px;
   flex-direction: column;
+  animation: fadeIn 3s;
 
   @include mediumScreens {
     flex-direction: row;

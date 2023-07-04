@@ -1,10 +1,12 @@
-<script setup lang="ts">
-
+<script setup>
+  import TypingEffect from '../shared/typingEffect.vue';
 </script>
 
 <template>
   <section class="welcome">
-    <h1>Hello, I'm Monica</h1>
+    <h1>
+      <TypingEffect text="Hello, I'm Monica"></TypingEffect> 
+    </h1>
     <div class="welcome__description">
       <p>
         Being a passionate Front End Developer is more than just a job for me; it's a deep-rooted enthusiasm that fuels my creativity and drive.
