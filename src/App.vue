@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import TypingEffect from './components/shared/typingEffect.vue';
+import ThemeToggle from './components/shared/themeToggle.vue';
 
 onMounted(() => {
   tippy('#github', {
@@ -20,6 +21,7 @@ onMounted(() => {
 <template>
   <main>
     <section class="portfolio container container__colored">
+      <ThemeToggle class="portfolio__theme-toggle" />
       <header class="portfolio__header">
         <icon
           custom-class="site-logo"
@@ -98,6 +100,7 @@ onMounted(() => {
 
 .portfolio {
   display: flex;
+  position: relative;
   gap: 50px;
   flex-direction: column;
   animation: fadeIn 3s;
@@ -105,6 +108,13 @@ onMounted(() => {
   @include mediumScreens {
     flex-direction: row;
     height: 368px;
+  }
+
+  &__theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: var(--z-index-front);
   }
 
   &__welcome {

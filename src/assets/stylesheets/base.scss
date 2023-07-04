@@ -1,8 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
-// semantic color variables for this project
-:root {
+.light-theme {
+  --z-index-front: #{$zIndexFront};
   --color-background: #{$white};
   --color-background-soft: #{$whiteSoft};
   --color-background-mute: #{$whiteMute};
@@ -18,22 +18,32 @@
   --color-link-hover: #{$bubbleGreenDark};
 }
 
-// dark theme
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #{$black};
-    --color-background-soft: #{$blackSoft};
-    --color-background-mute: #{$blackMute};
+.dark-theme {
+  --color-background: #{$black};
+  --color-background-soft: #{$blackSoft};
+  --color-background-mute: #{$blackMute};
 
-    --color-border: #{$dividerDark2};
-    --color-border-hover: #{$dividerDark1};
+  --color-border: #{$dividerDark2};
+  --color-border-hover: #{$dividerDark1};
 
-    --color-heading: #{$bubbleGreenLight};
-    --color-text: #{$whiteMute};
+  --color-heading: #{$bubbleGreenLight};
+  --color-text: #{$whiteMute};
 
-    --color-link: #{$bubbleGreen};
-    --color-link-hover: #{$white};
-  }
+  --color-link: #{$bubbleGreen};
+  --color-link-hover: #{$white};
+}
+
+// default color variables for project (light theme)
+:root {
+ @extend .light-theme;
+}
+
+body[data-theme="light"] {
+  @extend .light-theme;
+}
+
+body[data-theme="dark"] {
+  @extend .dark-theme;
 }
 
 *,
@@ -118,6 +128,24 @@ a:active {
 // paragraph
 p {
   padding: 8px 0;
+}
+
+// button
+button {
+  cursor: pointer;
+  padding: 2px 14px;
+  box-sizing: content-box;
+  height: 20px;
+  background: var(--color-background-soft);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 4px 2px 5px var(--color-border);
+  transition: color 0.5s, background-color 0.5s;
+  &:hover {
+    background-color: var(--color-background-mute);
+    text-decoration: none;
+  }
 }
 
 // common
