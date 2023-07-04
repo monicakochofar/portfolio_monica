@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
+import TypingEffect from './components/shared/typingEffect.vue';
 
 onMounted(() => {
   tippy('#github', {
@@ -29,9 +30,9 @@ onMounted(() => {
         <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
-            <RouterLink class="navigation-link" to="/">Home</RouterLink>
-            <RouterLink class="navigation-link" to="/experience"
-              >Experience</RouterLink
+            <RouterLink class="navigation-link" to="/">Companies</RouterLink>
+            <RouterLink class="navigation-link" to="/projects"
+              >Projects</RouterLink
             >
           </nav>
         </div>
@@ -68,10 +69,27 @@ onMounted(() => {
           </a>
         </div>
       </header>
-      <!-- Router output -->
-      <RouterView class="portfolio__content" />
+
+      <section class="portfolio__welcome">
+        <h1>
+          <TypingEffect text="Hello, I'm Monica"></TypingEffect>
+        </h1>
+        <div class="portfolio__description">
+          <p>I'm a Front-End developer from Toronto.</p>
+          <p>
+            Welcome to my personal website, the aim here is to showcase my
+            experiences and developed projects.
+          </p>
+          <p>
+            Feel free to take look around, and reach out through any of my
+            social links if you're interested in working together.
+          </p>
+        </div>
+      </section>
     </section>
 
+    <!-- Router output -->
+    <RouterView class="portfolio__content" />
     <!-- <section class="companies container">
       <h2>Companies I have worked with:</h2>
       
@@ -93,6 +111,19 @@ onMounted(() => {
     height: 368px;
   }
 
+  &__welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  &__description {
+    max-width: 650px;
+  }
+
   &__header,
   &__content {
     width: 100%;
@@ -104,15 +135,6 @@ onMounted(() => {
     align-items: center;
     flex-direction: column;
     flex: 1;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 2;
-    padding: 20px;
-    overflow-y: auto;
   }
 
   &__navigation {

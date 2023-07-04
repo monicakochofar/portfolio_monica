@@ -5,6 +5,5 @@
 </template>
 
 <style lang="scss" scoped>
- // add css here
- 
+// add css here
 </style>
