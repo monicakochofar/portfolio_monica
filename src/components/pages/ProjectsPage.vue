@@ -61,9 +61,9 @@ const projectList = ref([
 
 <template>
   <section class="projects grid-3">
-    <div class="container__colored">test</div>
-    <div class="container__colored">test</div>
-    <div class="container__colored">test</div>
+    <div class="container__colored">project 1</div>
+    <div class="container__colored">project 2</div>
+    <div class="container__colored">project 3</div>
   </section>
 </template>
 

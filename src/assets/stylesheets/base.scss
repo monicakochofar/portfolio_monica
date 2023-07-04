@@ -166,10 +166,6 @@ button {
     margin: 50px 50px;
   }
 
-  @include mediumScreens {
-    max-height: 368px;
-  }
-
   @include extraLargeScreens {
     margin: 50px auto;
   }

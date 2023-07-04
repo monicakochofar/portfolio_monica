@@ -61,14 +61,20 @@ const companyList = ref([
 
 <template>
   <section class="companies grid-3">
-    <div class="container__colored">test</div>
-    <div class="container__colored">test</div>
-    <div class="container__colored">test</div>
+    <div class="container__colored">company 1</div>
+    <div class="container__colored">company 2</div>
+    <div class="container__colored">company 3</div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .companies {
   margin-top: 50px;
+
+  > div {
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+  }
 }
 </style>
