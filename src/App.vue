@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <main>
-    <section class="portfolio container">
+    <section class="portfolio container container__colored">
       <header class="portfolio__header">
         <icon
           custom-class="site-logo"
@@ -89,11 +89,7 @@ onMounted(() => {
     </section>
 
     <!-- Router output -->
-    <RouterView class="portfolio__content" />
-    <!-- <section class="companies container">
-      <h2>Companies I have worked with:</h2>
-      
-    </section> -->
+    <RouterView class="container" />
   </main>
 </template>
 
