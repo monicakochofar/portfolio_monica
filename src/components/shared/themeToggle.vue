@@ -29,7 +29,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <button @click="toggleTheme" class="icon theme-toggle">
+  <button @click="toggleTheme" class="icon theme-toggle" tabindex="1">
     <div class="theme-toggle__background">
       <icon
         v-if="isLightTheme"
