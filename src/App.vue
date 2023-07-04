@@ -1,30 +1,49 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
   <main>
-
     <section class="portfolio container">
       <header class="portfolio__header">
-        <icon custom-class="site-logo" name="logo" width="125" height="125"></icon>
+        <icon
+          custom-class="site-logo"
+          file-name="logo"
+          width="125"
+          height="125"
+        ></icon>
         <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
             <RouterLink class="navigation-link" to="/">Home</RouterLink>
-            <RouterLink class="navigation-link" to="/experience">Experience</RouterLink>
+            <RouterLink class="navigation-link" to="/experience"
+              >Experience</RouterLink
+            >
           </nav>
         </div>
         <div class="portfolio__links">
           Socials:
-          <a class="icon" href="https://github.com/monicakochofar" target="_blank">
-              <icon name="github-white" width="20" height="20"></icon>
-          </a>          
-          <a class="icon" href="https://ca.linkedin.com/in/monicakochofar" target="_blank">
-            <icon name="linkedin" width="20" height="20"></icon>
+          <a
+            class="icon"
+            href="https://github.com/monicakochofar"
+            target="_blank"
+          >
+            <icon file-name="github-white" width="20" height="20"></icon>
+          </a>
+          <a
+            class="icon"
+            href="https://ca.linkedin.com/in/monicakochofar"
+            target="_blank"
+          >
+            <icon file-name="linkedin" width="20" height="20"></icon>
           </a>
           <a class="icon" href="https://mkay11.medium.com/" target="_blank">
-            <icon name="medium" width="20" height="20"></icon>
+            <icon
+              custom-class="medium"
+              file-name="medium"
+              width="20"
+              height="20"
+            ></icon>
           </a>
         </div>
       </header>
@@ -32,12 +51,10 @@
       <RouterView class="portfolio__content" />
     </section>
 
-
     <!-- <section class="companies container">
       <h2>Companies I have worked with:</h2>
       
     </section> -->
-
   </main>
 </template>
 
@@ -116,7 +133,10 @@
     a {
       height: 20px;
     }
+
+    .medium {
+      fill: var(--color-background);
+    }
   }
 }
-
 </style>

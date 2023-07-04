@@ -9,13 +9,13 @@
 
   --color-border: #{$dividerLight2};
 
-  --color-heading: #{$textLight1};
-  --color-text: #{$bubbleGreen};
+  --color-heading: #{$bubbleGreenDark};
+  --color-text: #{$black};
 
   --section-gap: 160px;
 
-  --color-link: #{$bubbleGreen};
-  --color-link-hover: #{$textDark1};
+  --color-link: #{$textLight1};
+  --color-link-hover: #{$bubbleGreenDark};
 }
 
 // dark theme
@@ -28,7 +28,7 @@
     --color-border: #{$dividerDark2};
     --color-border-hover: #{$dividerDark1};
 
-    --color-heading: #{$bubbleGreenDark};
+    --color-heading: #{$bubbleGreenLight};
     --color-text: #{$whiteMute};
 
     --color-link: #{$bubbleGreen};
