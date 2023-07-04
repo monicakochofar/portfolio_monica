@@ -152,10 +152,10 @@ button {
 .container {
   margin: 50px 20px 0;
   max-width: 1600px;
-  overflow: auto;
-  padding: 20px;
+  overflow: visible;
 
   &__colored {
+    padding: 20px;
     background: var(--color-background-soft);
     border: 1px solid var(--color-border);
     border-radius: 16px;
@@ -174,6 +174,20 @@ button {
     margin: 50px auto 0 auto;
   }
 
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include smallScreens {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mediumScreens {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 // animation

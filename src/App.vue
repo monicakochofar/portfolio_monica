@@ -19,8 +19,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
-    <section class="portfolio container container__colored">
+  <main class="container">
+    <section class="portfolio container__colored">
       <ThemeToggle class="portfolio__theme-toggle" />
       <header class="portfolio__header">
         <icon
@@ -91,7 +91,7 @@ onMounted(() => {
     </section>
 
     <!-- Router output -->
-    <RouterView class="container" />
+    <RouterView />
   </main>
 </template>
 
