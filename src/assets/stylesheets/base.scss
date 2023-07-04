@@ -93,11 +93,17 @@ a:visited {
   text-decoration: none;
   transition: all .4s ease;
   font-weight: 500;
+  &.icon {
+    color: unset;
+  }
 }
 
 a:hover {
   color: var(--color-link-hover);
   text-decoration: none;
+  &.icon {
+    transform: translate(2px, 2px);
+  }
 }
 
 a:active {

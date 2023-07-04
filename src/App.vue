@@ -29,13 +29,13 @@ onBeforeMount(() => {
         </div>
         <div class="portfolio__links">
           Socials:
-          <a href="https://github.com/monicakochofar" target="_blank">
+          <a class="icon" href="https://github.com/monicakochofar" target="_blank">
               <icon name="github-white" width="20" height="20"></icon>
           </a>          
-          <a href="https://ca.linkedin.com/in/monicakochofar" target="_blank">
+          <a class="icon" href="https://ca.linkedin.com/in/monicakochofar" target="_blank">
             <icon name="linkedin" width="20" height="20"></icon>
           </a>
-          <a href="https://mkay11.medium.com/" target="_blank">
+          <a class="icon" href="https://mkay11.medium.com/" target="_blank">
             <icon name="medium" width="20" height="20"></icon>
           </a>
         </div>
@@ -125,11 +125,7 @@ onBeforeMount(() => {
     max-width: 498px;
 
     a {
-      color: unset;
       height: 20px;
-    }
-    a:hover {
-      color: var(--color-link);
     }
   }
 }
