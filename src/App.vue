@@ -109,6 +109,7 @@ import { RouterLink, RouterView } from 'vue-router';
     .navigation-links {
       display: flex;
       flex-direction: column;
+      align-items: center;
       @include smallScreens {
         flex-direction: row;
       }
