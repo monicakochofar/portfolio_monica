@@ -10,7 +10,7 @@ import TypingEffect from '../shared/typingEffect.vue';
     <div class="welcome__description">
       <p>I'm a Front-End developer from Toronto.</p>
       <p>
-        You have found my personal website!--the aim here is to showcase my
+        Welcome to my personal website, the aim here is to showcase my
         experiences and developed projects.
       </p>
       <p>
