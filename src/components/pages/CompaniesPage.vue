@@ -95,7 +95,7 @@ function readMoreToggle(e) {
       <header class="companies__header">
         <div class="companies__title">
           <h5>{{ company.name }}</h5>
-          <span>{{ company.title }}</span>
+          <span style="text-decoration: underline">{{ company.title }}</span>
           <!-- <span>{{ company.location }}</span> -->
           <span class="companies__dates"
             >{{ company.startDate }} - {{ company.endDate }}</span
