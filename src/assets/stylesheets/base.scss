@@ -103,13 +103,17 @@ h5 {
 // links
 a:link,
 a:visited {
-  transition: color 200ms ease;
+  transition: color 200ms ease, text-decoration 1.2s ease;
   color: var(--color-link);
   text-decoration: none;
-  transition: all .4s ease;
   font-weight: 500;
+  text-decoration-color: transparent;
   &.icon {
     color: unset;
+  }
+  &.router-link-active {
+    text-decoration: underline;
+    text-decoration-color: var(--color-link);
   }
 }
 
