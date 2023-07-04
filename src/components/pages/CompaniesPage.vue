@@ -70,11 +70,5 @@ const companyList = ref([
 <style lang="scss" scoped>
 .companies {
   margin-top: 50px;
-
-  > div {
-    min-height: 250px;
-    max-height: 250px;
-    overflow: hidden;
-  }
 }
 </style>

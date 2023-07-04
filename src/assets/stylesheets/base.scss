@@ -184,6 +184,12 @@ button {
   @include mediumScreens {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  > div {
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+  }
 }
 
 // animation
