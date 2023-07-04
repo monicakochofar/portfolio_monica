@@ -150,7 +150,7 @@ button {
 
 // common
 .container {
-  margin: 50px 20px 0;
+  margin: 50px 20px;
   max-width: 1600px;
   overflow: visible;
 
@@ -163,7 +163,7 @@ button {
   }
 
   @include smallScreens {
-    margin: 50px 50px 0;
+    margin: 50px 50px;
   }
 
   @include mediumScreens {
@@ -171,7 +171,7 @@ button {
   }
 
   @include extraLargeScreens {
-    margin: 50px auto 0 auto;
+    margin: 50px auto;
   }
 
 }
