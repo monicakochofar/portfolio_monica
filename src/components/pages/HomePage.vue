@@ -1,30 +1,30 @@
 <script setup>
-  import TypingEffect from '../shared/typingEffect.vue';
+import TypingEffect from '../shared/typingEffect.vue';
 </script>
 
 <template>
   <section class="welcome">
     <h1>
-      <TypingEffect text="Hello, I'm Monica"></TypingEffect> 
+      <TypingEffect text="Hello, I'm Monica"></TypingEffect>
     </h1>
     <div class="welcome__description">
+      <p>I'm a Front-End developer from Toronto.</p>
       <p>
-        Being a passionate Front End Developer is more than just a job for me; it's a deep-rooted enthusiasm that fuels my creativity and drive.
+        You have found my personal website!--the aim here is to showcase my
+        experiences and developed projects.
       </p>
       <p>
-        I have a desire for growth and opportunity. Each role that I have had gives me the opportunity to learn, take on more responsiblity, and diversify my skillset.
-      </p>
-      <p>
-        My experiences have given me the confidence to know that I can step into any role and provide value for my team.
+        Feel free to take look around, and reach out through any of my social
+        links if you're interested in working together.
       </p>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-  .welcome {
-    &__description {
-      max-width: 650px;
-    }
+.welcome {
+  &__description {
+    max-width: 650px;
   }
+}
 </style>
