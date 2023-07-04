@@ -1,5 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { onMounted } from 'vue';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+
+onMounted(() => {
+  tippy('#github', {
+    content: 'GitHub'
+  });
+  tippy('#linkedin', {
+    content: 'LinkedIn'
+  });
+  tippy('#medium', {
+    content: 'Medium'
+  });
+});
 </script>
 
 <template>
@@ -25,6 +39,7 @@ import { RouterLink, RouterView } from 'vue-router';
           Socials:
           <a
             class="icon"
+            id="github"
             href="https://github.com/monicakochofar"
             target="_blank"
           >
@@ -32,12 +47,18 @@ import { RouterLink, RouterView } from 'vue-router';
           </a>
           <a
             class="icon"
+            id="linkedin"
             href="https://ca.linkedin.com/in/monicakochofar"
             target="_blank"
           >
             <icon file-name="linkedin" width="20" height="20"></icon>
           </a>
-          <a class="icon" href="https://mkay11.medium.com/" target="_blank">
+          <a
+            id="medium"
+            class="icon"
+            href="https://mkay11.medium.com/"
+            target="_blank"
+          >
             <icon
               custom-class="medium"
               file-name="medium"
