@@ -44,7 +44,7 @@ onMounted(() => {
             href="https://github.com/monicakochofar"
             target="_blank"
           >
-            <icon file-name="github-white" width="20" height="20"></icon>
+            <icon file-name="github-white" width="22" height="22"></icon>
           </a>
           <a
             class="icon"
@@ -52,7 +52,7 @@ onMounted(() => {
             href="https://ca.linkedin.com/in/monicakochofar"
             target="_blank"
           >
-            <icon file-name="linkedin" width="20" height="20"></icon>
+            <icon file-name="linkedin" width="22" height="22"></icon>
           </a>
           <a
             id="medium"
@@ -63,8 +63,8 @@ onMounted(() => {
             <icon
               custom-class="medium-logo"
               file-name="medium"
-              width="20"
-              height="20"
+              width="22"
+              height="22"
             ></icon>
           </a>
         </div>
@@ -120,13 +120,9 @@ onMounted(() => {
     max-width: 650px;
   }
 
-  &__header,
-  &__content {
-    width: 100%;
-  }
-
   &__header {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -171,7 +167,7 @@ onMounted(() => {
     max-width: 498px;
 
     a {
-      height: 20px;
+      height: 22px;
     }
 
     .medium-logo {
