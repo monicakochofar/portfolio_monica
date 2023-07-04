@@ -28,7 +28,7 @@ onMounted(() => {
           file-name="logo"
           width="125"
           height="125"
-        ></icon>
+        />
         <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
@@ -46,7 +46,7 @@ onMounted(() => {
             href="https://github.com/monicakochofar"
             target="_blank"
           >
-            <icon file-name="github-white" width="22" height="22"></icon>
+            <icon file-name="github-white" width="22" height="22" />
           </a>
           <a
             class="icon"
@@ -54,7 +54,7 @@ onMounted(() => {
             href="https://ca.linkedin.com/in/monicakochofar"
             target="_blank"
           >
-            <icon file-name="linkedin" width="22" height="22"></icon>
+            <icon file-name="linkedin" width="22" height="22" />
           </a>
           <a
             id="medium"
@@ -67,7 +67,7 @@ onMounted(() => {
               file-name="medium"
               width="22"
               height="22"
-            ></icon>
+            />
           </a>
         </div>
       </header>
@@ -90,6 +90,9 @@ onMounted(() => {
       </section>
     </section>
 
+    <!-- TODO: create a filter -->
+    <!-- <section class="container__colored" style="margin-top: 50px;">filter here</section> -->
+
     <!-- Router output -->
     <RouterView />
   </main>
@@ -99,7 +102,7 @@ onMounted(() => {
 @import './assets/stylesheets/mixins';
 
 main {
-  animation: fadeIn 3s;
+  animation: fadeIn 2s;
 }
 
 .portfolio {

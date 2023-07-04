@@ -57,7 +57,7 @@ body[data-theme="dark"] {
 body {
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -181,22 +181,22 @@ button {
   grid-template-columns: 1fr;
   gap: 20px;
 
-  @include smallScreens {
+  @include mediumScreens {
     grid-template-columns: 1fr 1fr;
   }
 
-  @include mediumScreens {
+  @include largeScreens {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   > div {
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 260px;
+    max-height: 260px;
     overflow: hidden;
   }
 }
 
-// animation
+// keyframes
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);

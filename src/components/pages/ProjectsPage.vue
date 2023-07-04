@@ -61,13 +61,12 @@ const projectList = ref([
 
 <template>
   <section class="projects grid-3">
-    <div class="container__colored">project 1</div>
-    <div class="container__colored">project 2</div>
-    <div class="container__colored">project 3</div>
+    <div class="projects__item container__colored">project 1</div>
   </section>
 </template>
 
 <style lang="scss" scoped>
+@import '../../assets/stylesheets/mixins';
 .projects {
   margin-top: 50px;
 }
