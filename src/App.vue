@@ -60,7 +60,7 @@ onMounted(() => {
             target="_blank"
           >
             <icon
-              custom-class="medium"
+              custom-class="medium-logo"
               file-name="medium"
               width="20"
               height="20"
@@ -156,7 +156,7 @@ onMounted(() => {
       height: 20px;
     }
 
-    .medium {
+    .medium-logo {
       fill: var(--color-background);
     }
   }
