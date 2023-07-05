@@ -21,6 +21,8 @@ export const COMPANY_LIST = [
     startDate: '10/2021',
     endDate: '05/2022',
     bullets: [
+      'Contributed to architectural and performance planning for application serving over <span class="bold">7000 call centre representatives</span>',
+      'Regularly conducted code review sessions with team to deliver high quality code',
       '<span class="bold">Mentored junior developers</span> weekly to assist in their growth and learning',
       'Led Front-End development for projects using HTML, CSS/SASS, and Angular 10',
       'Contributed to initial planning for the creation of an internal web search tool to serve call centre representatives'
@@ -120,6 +122,6 @@ export const COMPANY_LIST = [
     ],
     icon: 'gnome',
     website: 'https://developer.gnome.org/',
-    stack: ['Unix']
+    stack: ['Unix', 'C++']
   }
 ];

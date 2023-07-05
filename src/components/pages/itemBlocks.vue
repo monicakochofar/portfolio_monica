@@ -36,10 +36,10 @@ function readMoreToggle(item) {
     >
       <header class="block__header">
         <div class="block__title">
-          <h5>{{ item.name }}</h5>
-          <span v-if="item.title" style="text-decoration: underline">
+          <h4>{{ item.name }}</h4>
+          <h5 v-if="item.title">
             {{ item.title }}
-          </span>
+          </h5>
           <span class="block__dates" v-if="item.startDate && item.endDate">
             {{ item.startDate }} - {{ item.endDate }}
           </span>
@@ -98,12 +98,11 @@ function readMoreToggle(item) {
     animation: fadeIn 1.5s;
     align-self: start;
     min-height: 264px;
-    overflow: auto;
+    overflow: hidden;
     transition: all 0.3s ease;
 
     @include smallScreens {
       min-height: 260px;
-      max-height: 260px;
     }
 
     &:hover {
