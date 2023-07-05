@@ -108,10 +108,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 @import './assets/stylesheets/mixins';
 
-main {
-  //animation: fadeIn 2s;
-}
-
 .portfolio {
   display: flex;
   position: relative;
