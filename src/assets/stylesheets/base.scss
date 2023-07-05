@@ -1,6 +1,11 @@
 @import 'variables';
 @import 'mixins';
 
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.ttf') format('truetype');
+}
+
 .light-theme {
   --color-background: #{$white};
   --color-background-soft: #{$whiteSoft};

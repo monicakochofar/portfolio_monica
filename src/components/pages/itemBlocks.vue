@@ -103,7 +103,7 @@ function readMoreToggle(item) {
     transition: all 0.3s ease;
 
     @include smallScreens {
-      min-height: 260px;
+      min-height: 294px;
     }
 
     &:hover {
