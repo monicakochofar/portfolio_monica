@@ -59,7 +59,7 @@ onMounted(() => {
     width: 2px;
     height: 38px;
     background-color: var(--color-heading);
-    margin-left: 8px;
+    margin-left: 4px;
     animation: blink 0.6s linear infinite alternate;
 
     @include mediumScreens {

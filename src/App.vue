@@ -74,7 +74,7 @@ onMounted(() => {
 
       <section class="portfolio__welcome">
         <h1>
-          <TypingEffect text="Hello, I'm Monica"></TypingEffect>
+          <TypingEffect text="Hello, I'm Monica."></TypingEffect>
         </h1>
         <div class="portfolio__description">
           <p>I'm a Front-End developer from Toronto.</p>
