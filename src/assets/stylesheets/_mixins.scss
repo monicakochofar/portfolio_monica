@@ -95,6 +95,7 @@ $extraLargeScreenWidth: 1600px;
 @mixin pill {
   padding: 2px 14px;
   box-sizing: content-box;
+  text-align: center;
   height: 20px;
   background: var(--color-background-soft);
   color: var(--color-text);

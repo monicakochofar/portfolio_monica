@@ -60,6 +60,7 @@ function readMoreToggle(item) {
       <div class="block__footer">
         <button class="block__read-more" @click="readMoreToggle(item)">
           Learn More
+          <icon file-name="popup" width="16" height="16" />
         </button>
         <TechStack :stack-list="item.stack" />
       </div>
@@ -137,7 +138,9 @@ function readMoreToggle(item) {
   }
 
   &__read-more {
-    width: 74px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   &__footer {

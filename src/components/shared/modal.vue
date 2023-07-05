@@ -70,6 +70,7 @@ watch(
 
 <style lang="scss" scoped>
 @import '../../assets/stylesheets/variables';
+@import '../../assets/stylesheets/mixins';
 .overlay {
   opacity: 0;
   position: fixed;
@@ -100,6 +101,13 @@ watch(
 
   &__location {
     padding-bottom: 12px;
+  }
+
+  &__image {
+    display: none;
+    @include smallScreens {
+      display: block;
+    }
   }
 
   &__close {
