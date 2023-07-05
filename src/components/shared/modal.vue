@@ -46,7 +46,7 @@ watch(
 
 <template>
   <div class="overlay" @click="close">
-    <div class="modal-content">
+    <div class="modal-content" @click.stop>
       <button class="modal-content__close" @click="close">X</button>
       <h3>{{ props.title }}</h3>
       <ul class="modal-content__bullets">
