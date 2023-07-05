@@ -39,8 +39,8 @@ export const COMPANY_LIST = [
     endDate: '10/2021',
     bullets: [
       'Developed Front-End for a web application serving over <span class="bold">7000 call centre representatives</span>, using HTML, CSS/SASS and Angular 10',
-      'Implemented unit tests through the use of the Jest framework to guarantee 85% test coverage',
-      'Uplifted legacy AngularJS applications to the latest Angular version'
+      'Implemented unit tests through the use of the JEST framework to guarantee 85% test coverage',
+      'Regularly uplifted legacy AngularJS applications to the latest Angular version'
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
@@ -54,7 +54,7 @@ export const COMPANY_LIST = [
     endDate: '09/2019',
     bullets: [
       'Successfully executed and planned for a <span class="bold">high risk code migration</span> of existing Rogers and Fido call centre and retail legacy applications',
-      'Designed <span class="bold">RESTful</span> api services and SSO architecture',
+      'Designed new <span class="bold">RESTful</span> API services and SSO architecture',
       'Developed using AngularJS, Spring Framework, Cassandra, and AkkaHTTP'
     ],
     icon: 'rogers',
@@ -68,7 +68,7 @@ export const COMPANY_LIST = [
     startDate: '05/2016',
     endDate: '01/2018',
     bullets: [
-      'Developed for a Fido/Rogers legacy application <span class="bold">serving 500 stores</span> using Java 1.6, Javascript, and the Oracle ATG Web Commerce platform',
+      'Developed Full-Stack tickets for a Fido/Rogers legacy application <span class="bold">serving 500 stores</span> using Java 1.6, Javascript, and the Oracle ATG Web Commerce platform',
       'Trained co-op students on development and best team practices',
       'Developed data models and SQL database designs to plan projects'
     ],
@@ -84,7 +84,8 @@ export const COMPANY_LIST = [
     endDate: '05/2016',
     bullets: [
       'Completed <span class="bold">4 rotations</span> within Rogers IT by taking on the roles of Business Systems Analyst, Developer, Production Support Analyst, and Infrastructure Project lead',
-      'Migrated infra team from using excel document to Microsoft access for storing project data'
+      'Analyzed existing Rogers Billing products, and effectively delivered requirements to project team',
+      'Migrated Infrastructure team from using an excel document to Microsoft access for storing project data'
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
@@ -97,13 +98,13 @@ export const COMPANY_LIST = [
     startDate: '08/2013',
     endDate: '08/2014',
     bullets: [
-      "Worked as a software developer and administrator for a web application based in Ruby on Rails, widely used by Bell's Wireless Technology Products team for their HSPA and LTE devices",
+      "Worked as a Software Engineer and Administrator for a Web application, used by approximately 50 users from Bell's Wireless Technology Products QA team for their HSPA and LTE devices",
       'Ensured <span class="bold">security of sensitive company data</span> by implementing appropriate measures',
-      'Created a script to parse through large QXDM log files and extract relevant data <span class="bold">using search algorithms</span> and developing a user interface',
+      "Created a search algorithm to parse through large QXDM log files and extract relevant data to be used by Bell's Lab QA team",
       "Developed and presented an Android application to test Bell's Push-to-Talk application",
       'Managed inventory and distribution of items to three separate teams',
-      'Maintained, and troubleshot servers',
-      'Hosted tutorial meetings to update team on any new development'
+      'Solely maintained, and troubleshot servers',
+      'Hosted weekly tutorial meetings to update team on any new development'
     ],
     icon: 'bell',
     website: 'https://www.bell.ca/',
@@ -116,9 +117,9 @@ export const COMPANY_LIST = [
     startDate: '05/2012',
     endDate: '08/2012',
     bullets: [
-      'Acquired a solid understanding of how to use the <span class="bold">gtk+ toolkit</span> to design Graphical User Interfaces',
-      '<span class="bold">Created easy-to-follow tutorials</span> that have helped develop various applications',
-      'Communicated effectively with team members who are located in different parts of the world'
+      'Acquired a solid understanding of how to use the open source <span class="bold">GTK toolkit</span> that allows cross-platform GUI creation.',
+      '<span class="bold">Created easy-to-follow tutorials</span> that spur new developers to effectively create their own UI within the GNOME Linux operating system',
+      'Coordinated effectively with team members located in different parts of the world'
     ],
     icon: 'gnome',
     website: 'https://developer.gnome.org/',
