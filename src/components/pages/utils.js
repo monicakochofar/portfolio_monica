@@ -6,9 +6,9 @@ export const COMPANY_LIST = [
     startDate: '05/2022',
     endDate: 'Current',
     bullets: [
-      'Developed products for a web application serving over <span class="bold">4+ million visitors</span> each month, using Vue.js, CSS/SASS, and Ruby on Rails',
+      'Developed products for a self-promotion and social networking platform for digital designers serving over <span class="bold">4+ million visitors</span> each month',
       'Spearheaded discussions with product, QA, and backend developers to <span class="bold">convert product ideas into tangible deliveries</span>',
-      'Supported fellow engineers through code reviews, training new hires, uplifting documentation, and advancement of internal processes.'
+      'Supported fellow engineers through code reviews, training new hires, uplifting documentation, and advancement of internal processes'
     ],
     icon: 'dribbble',
     website: 'https://dribbble.com/',
@@ -38,7 +38,7 @@ export const COMPANY_LIST = [
     startDate: '09/2019',
     endDate: '10/2021',
     bullets: [
-      'Developed Front-End for a web application serving over <span class="bold">7000 call centre representatives</span>, using HTML, CSS/SASS and Angular 10',
+      'Developed Front-End updates for a web application serving over <span class="bold">7000 call centre representatives</span>, using HTML, CSS/SASS and Angular 10',
       'Implemented unit tests through the use of the JEST framework to guarantee 85% test coverage',
       'Regularly uplifted legacy AngularJS applications to the latest Angular version'
     ],
@@ -53,7 +53,7 @@ export const COMPANY_LIST = [
     startDate: '01/2018',
     endDate: '09/2019',
     bullets: [
-      'Successfully executed and planned for a <span class="bold">high risk code migration</span> of existing Rogers and Fido call centre and retail legacy applications',
+      'Successfully executed and planned for a <span class="bold">high risk code migration</span> for Rogers and Fido call centre/retail legacy applications',
       'Designed new <span class="bold">RESTful</span> API services and SSO architecture',
       'Developed using AngularJS, Spring Framework, Cassandra, and AkkaHTTP'
     ],
@@ -68,7 +68,7 @@ export const COMPANY_LIST = [
     startDate: '05/2016',
     endDate: '01/2018',
     bullets: [
-      'Developed Full-Stack tickets for a Fido/Rogers legacy application <span class="bold">serving 500 stores</span> using Java 1.6, Javascript, and the Oracle ATG Web Commerce platform',
+      'Developed Full-Stack updates for a Fido/Rogers legacy application <span class="bold">serving 500 stores</span> using Java 1.6, Javascript, and the Oracle ATG Web Commerce platform',
       'Trained co-op students on development and best team practices',
       'Developed data models and SQL database designs to plan projects'
     ],
@@ -98,7 +98,7 @@ export const COMPANY_LIST = [
     startDate: '08/2013',
     endDate: '08/2014',
     bullets: [
-      "Worked as a Software Engineer and Administrator for a Web application, used by approximately 50 users from Bell's Wireless Technology Products QA team for their HSPA and LTE devices",
+      'Worked as a Software Engineer and Administrator for an <span class="bold">NDA web application</span>, used by approximately <span class="bold">50 users</span> from Bell\'s Wireless Technology Products QA team for their HSPA and LTE devices',
       'Ensured <span class="bold">security of sensitive company data</span> by implementing appropriate measures',
       "Created a search algorithm to parse through large QXDM log files and extract relevant data to be used by Bell's Lab QA team",
       "Developed and presented an Android application to test Bell's Push-to-Talk application",
