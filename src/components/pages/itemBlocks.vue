@@ -61,7 +61,7 @@ function readMoreToggle(item) {
         <button class="block__read-more" @click="readMoreToggle(item)">
           Learn More
         </button>
-        <TechStack />
+        <TechStack :stack-list="item.stack" />
       </div>
     </section>
 
@@ -98,7 +98,6 @@ function readMoreToggle(item) {
     animation: fadeIn 1.5s;
     align-self: start;
     min-height: 264px;
-    max-height: 264px;
     overflow: auto;
     transition: all 0.3s ease;
 
@@ -144,9 +143,13 @@ function readMoreToggle(item) {
 
   &__footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-top: 14px;
+    margin-top: 28px;
+
+    @include smallScreens {
+      margin-top: 14px;
+    }
   }
 }
 </style>

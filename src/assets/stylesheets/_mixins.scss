@@ -100,7 +100,6 @@ $extraLargeScreenWidth: 1600px;
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  box-shadow: 4px 2px 5px var(--color-border);
   transition: color 0.5s, background-color 0.5s;
   @include fontBodySmall;
 }

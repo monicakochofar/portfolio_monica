@@ -11,7 +11,8 @@ export const COMPANY_LIST = [
       'Supported fellow engineers through code reviews, training new hires, uplifting documentation, and advancement of internal processes.'
     ],
     icon: 'dribbble',
-    website: 'https://dribbble.com/'
+    website: 'https://dribbble.com/',
+    stack: ['Vue', 'Ruby on Rails']
   },
   {
     title: 'Senior Front-End Developer',
@@ -25,7 +26,8 @@ export const COMPANY_LIST = [
       'Contributed to initial planning for the creation of an internal web search tool to serve call centre representatives'
     ],
     icon: 'rogers',
-    website: 'https://www.rogers.com/'
+    website: 'https://www.rogers.com/',
+    stack: ['Angular 2+']
   },
   {
     title: 'Front-End Developer',
@@ -39,7 +41,8 @@ export const COMPANY_LIST = [
       'Uplifted legacy AngularJS applications to the latest Angular version'
     ],
     icon: 'rogers',
-    website: 'https://www.rogers.com/'
+    website: 'https://www.rogers.com/',
+    stack: ['AngularJS']
   },
   {
     title: 'Full-Stack Developer',
@@ -53,7 +56,8 @@ export const COMPANY_LIST = [
       'Developed using AngularJS, Spring Framework, Cassandra, and AkkaHTTP'
     ],
     icon: 'rogers',
-    website: 'https://www.rogers.com/'
+    website: 'https://www.rogers.com/',
+    stack: ['Java', 'AngularJS']
   },
   {
     title: 'Java J2EE Developer',
@@ -67,7 +71,8 @@ export const COMPANY_LIST = [
       'Developed data models and SQL database designs to plan projects'
     ],
     icon: 'rogers',
-    website: 'https://www.rogers.com/'
+    website: 'https://www.rogers.com/',
+    stack: ['Java']
   },
   {
     title: 'INTRO Associate (New Graduate Program)',
@@ -80,7 +85,8 @@ export const COMPANY_LIST = [
       'Migrated infra team from using excel document to Microsoft access for storing project data'
     ],
     icon: 'rogers',
-    website: 'https://www.rogers.com/'
+    website: 'https://www.rogers.com/',
+    stack: ['Java']
   },
   {
     title: 'Engineer, Tooling and Administration',
@@ -98,7 +104,8 @@ export const COMPANY_LIST = [
       'Hosted tutorial meetings to update team on any new development'
     ],
     icon: 'bell',
-    website: 'https://www.bell.ca/'
+    website: 'https://www.bell.ca/',
+    stack: ['Unix', 'Ruby on Rails']
   },
   {
     title: 'Outreachy Intern for GNOME',
@@ -112,6 +119,7 @@ export const COMPANY_LIST = [
       'Communicated effectively with team members who are located in different parts of the world'
     ],
     icon: 'gnome',
-    website: 'https://developer.gnome.org/'
+    website: 'https://developer.gnome.org/',
+    stack: ['Unix']
   }
 ];

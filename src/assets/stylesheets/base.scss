@@ -5,6 +5,7 @@
   --color-background: #{$white};
   --color-background-soft: #{$whiteSoft};
   --color-background-mute: #{$whiteMute};
+  --color-background-quiet: #{$white};
 
   --color-border: #{$dividerLight2};
 
@@ -21,6 +22,7 @@
   --color-background: #{$black};
   --color-background-soft: #{$blackSoft};
   --color-background-mute: #{$blackMute};
+  --color-background-quiet: #{$blackQuiet};
 
   --color-border: #{$dividerDark2};
   --color-border-hover: #{$dividerDark1};
@@ -140,6 +142,7 @@ p {
 
 button {
   cursor: pointer;
+  box-shadow: 4px 2px 5px var(--color-border);
   @include pill;
   &:hover {
     background-color: var(--color-background-mute);
