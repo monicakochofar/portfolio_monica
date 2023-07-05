@@ -1,0 +1,116 @@
+<script setup>
+import { ref, onMounted, watchEffect } from 'vue';
+import Modal from '../shared/modal.vue';
+
+const props = defineProps({
+  itemList: {
+    type: Array,
+    required: true
+  }
+});
+
+const modalData = ref({ title: '', bullets: [], showModal: false });
+
+function readMoreToggle(item) {
+  modalData.value.title = item.name;
+  modalData.value.bullets = item.bullets;
+  modalData.value.showModal = true;
+}
+</script>
+
+<template>
+  <div class="grid-3" style="margin-top: 50px">
+    <section
+      class="block__item container__colored"
+      v-for="item in props.itemList"
+      :key="item.title"
+    >
+      <header class="block__header">
+        <div class="block__title">
+          <h5>{{ item.name }}</h5>
+          <span style="text-decoration: underline">{{ item.title }}</span>
+          <!-- <span>{{ item.location }}</span> -->
+          <span class="block__dates"
+            >{{ item.startDate }} - {{ item.endDate }}</span
+          >
+        </div>
+        <a class="block__logo" :href="item.website" target="_blank">
+          <icon :file-name="item.icon" />
+        </a>
+      </header>
+
+      <ul class="block__bullets">
+        <li v-for="bullet in item.bullets" :key="bullet">{{ bullet }}</li>
+      </ul>
+      <div class="block__footer">
+        <button class="block__read-more" @click="readMoreToggle(item)">
+          Read More
+        </button>
+      </div>
+    </section>
+
+    <Modal
+      :title="modalData.title"
+      :bullets="modalData.bullets"
+      :showModal="modalData.showModal"
+      @modal-closed="modalData.showModal = false"
+    />
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@import '../../assets/stylesheets/mixins';
+
+.item-blocks {
+}
+.block {
+  .show-full {
+    max-height: unset;
+    overflow: scroll;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s;
+    align-self: start;
+    min-height: 260px;
+    max-height: 260px;
+    overflow: auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+
+  &__dates,
+  &__bullets {
+    @include fontBodySmall;
+  }
+
+  &__bullets {
+    max-height: 84px;
+    overflow: hidden;
+  }
+
+  &__read-more {
+    width: 74px;
+    margin-top: 14px;
+    @include fontBodySmall;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+</style>

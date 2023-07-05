@@ -2,7 +2,6 @@
 @import 'mixins';
 
 .light-theme {
-  --z-index-front: #{$zIndexFront};
   --color-background: #{$white};
   --color-background-soft: #{$whiteSoft};
   --color-background-mute: #{$whiteMute};
@@ -35,6 +34,7 @@
 
 // default color variables for project (light theme)
 :root {
+  --z-index-front: #{$zIndexFront};
  @extend .light-theme;
 }
 
@@ -67,6 +67,10 @@ body {
   @include smallScreens {
     @include fontBody;
   }
+}
+
+ul {
+  padding-left: 18px;
 }
 
 // headings

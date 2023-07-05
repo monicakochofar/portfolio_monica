@@ -7,7 +7,7 @@ const props = defineProps({
     required: true
   },
   bullets: {
-    type: String,
+    type: Array,
     required: true
   },
   showModal: {
@@ -15,9 +15,11 @@ const props = defineProps({
     required: true
   }
 });
+const emit = defineEmits(['modal-closed']);
 
 function close() {
   document.querySelector('.overlay').classList.remove('show');
+  emit('modal-closed');
 }
 
 function open() {
@@ -46,12 +48,12 @@ watch(
   <div class="overlay" @click="close">
     <div class="modal-content">
       <button class="modal-content__close" @click="close">X</button>
-      <h2>{{ props.title }}</h2>
+      <h3>{{ props.title }}</h3>
       <ul class="modal-content__bullets">
-        {{
+        <!-- {{
           props.bullets
-        }}
-        <!-- <li v-for="bullet in props.bullets" :key="bullet">{{ bullet }}</li> -->
+        }} -->
+        <li v-for="bullet in props.bullets" :key="bullet">{{ bullet }}</li>
       </ul>
     </div>
   </div>
@@ -62,7 +64,6 @@ watch(
 .overlay {
   opacity: 0;
   position: fixed;
-  z-index: var(--z-index-front);
   left: 0;
   top: 0;
   width: 100%;
@@ -70,18 +71,21 @@ watch(
   overflow: auto;
   background-color: var(--color-background-soft);
   transition: all ease 0.5s;
+  z-index: -1;
   &.show {
     opacity: 1;
+    z-index: var(--z-index-front);
   }
 }
 
 .modal-content {
   position: relative;
   background-color: var(--color-background);
-  margin: 15% auto;
+  margin: 8% auto;
   padding: 40px 50px;
   border: 1px solid var(--color-border);
-  width: 56%;
+  width: 84%;
+  max-width: 888px;
   min-height: 40%;
   border-radius: 12px;
 
