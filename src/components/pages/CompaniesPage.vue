@@ -1,80 +1,13 @@
 <script setup>
 import { ref } from 'vue';
-const companyList = ref([
-  {
-    title: 'Front-End Engineer',
-    name: 'Dribbble Holdings Ltd.',
-    location: 'Remote',
-    startDate: '05/2022',
-    endDate: 'Current',
-    bullets: [
-      'Developed products for a web application serving over 4+ million visitors each month, using Vue.js, CSS/SASS, and Ruby on Rails',
-      'Spearheaded discussions with product, QA, and backend developers to convert product ideas into tangible deliveries',
-      'Supported fellow engineers through code reviews, training new hires, uplifting documentation, and advancement of internal processes.'
-    ],
-    icon: 'dribbble'
-  },
-  {
-    title: 'Senior Front-End Developer',
-    name: 'Rogers Communications Inc',
-    location: 'Brampton, ON',
-    startDate: '10/2021',
-    endDate: '05/2022',
-    bullets: [
-      'Mentored junior developers weekly to assist in their growth and learning',
-      'Led Front-End development for projects using HTML, CSS/SASS, and Angular 10',
-      'Contributed to initial planning for the creation of an internal web search tool to serve call centre representatives'
-    ],
-    icon: 'rogers'
-  },
-  {
-    title: 'Front-End Developer',
-    name: 'Rogers Communications Inc',
-    location: 'Brampton, ON',
-    startDate: '09/2019',
-    endDate: '10/2021',
-    bullets: [
-      'Developed Front-End for a web application serving over 7000 call centre representatives, using HTML, CSS/SASS and Angular 10',
-      'Implemented unit tests through the use of the Jest framework to guarantee 85% test coverage',
-      'Uplifted legacy AngularJS applications to the latest Angular version'
-    ],
-    icon: 'rogers'
-  },
-  {
-    title: 'Full-Stack Developer',
-    name: 'Rogers Communications Inc',
-    location: 'Brampton, ON',
-    startDate: '01/2018',
-    endDate: '09/2019',
-    bullets: [
-      'Contributed to implementation and planning for a high priority rework of existing Rogers and Fido call centre and retail applications',
-      'Designed RESTful api services and SSO architecture',
-      'Developed using AngularJS, Spring Framework, Cassandra, and AkkaHTTP'
-    ],
-    icon: 'rogers'
-  },
-  {
-    title: 'Java J2EE Developer',
-    name: 'Rogers Communications Inc',
-    location: 'Brampton, ON',
-    startDate: '05/2016',
-    endDate: '01/2018',
-    bullets: [
-      'Developed for a Fido/Rogers legacy application serving 500 stores using Java 1.6, Javascript, and the Oracle ATG Web Commerce platform',
-      'Trained co-op students on development and best team practices',
-      'Developed data models and SQL database designs to plan projects'
-    ],
-    icon: 'rogers'
-  }
-]);
+import { COMPANY_LIST } from './utils';
+const companyList = ref(COMPANY_LIST);
 
 function readMoreToggle(e) {
   const button = e.target;
-  console.log('button', button);
   const parent = button.closest('.companies__item');
 
   const bullets = parent.querySelector('.companies__bullets');
-  console.log('bullets', bullets);
   if (bullets.classList.contains('show-full')) {
     bullets.classList.remove('show-full');
     button.innerHTML = 'Read more';
@@ -101,17 +34,19 @@ function readMoreToggle(e) {
             >{{ company.startDate }} - {{ company.endDate }}</span
           >
         </div>
-        <icon :file-name="company.icon" />
+        <a :href="company.website" target="_blank">
+          <icon :file-name="company.icon" />
+        </a>
       </header>
 
       <ul class="companies__bullets">
         <li v-for="bullet in company.bullets" :key="bullet">{{ bullet }}</li>
       </ul>
-      <footer class="companies__footer">
+      <div class="companies__footer">
         <button class="companies__read-more" @click="readMoreToggle">
           Read More
         </button>
-      </footer>
+      </div>
     </section>
   </div>
 </template>
@@ -123,14 +58,17 @@ function readMoreToggle(e) {
 
   .show-full {
     max-height: unset;
-    overflow: visible;
+    overflow: scroll;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     animation: fadeIn 1.5s;
-    overflow-y: scroll;
+    align-self: start;
+    min-height: 250px;
+    // max-height: 250px;
+    overflow: auto;
   }
 
   &__header {

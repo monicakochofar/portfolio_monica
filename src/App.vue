@@ -79,8 +79,9 @@ onMounted(() => {
         <div class="portfolio__description">
           <p>I'm a Front-End developer from Toronto.</p>
           <p>
-            Welcome to my personal website, the aim here is to showcase my
-            experiences and developed projects.
+            Welcome to my personal website, completely developed by me from
+            scratch. The aim here is to showcase my experiences and developed
+            projects.
           </p>
           <p>
             Feel free to take look around, and reach out through any of my

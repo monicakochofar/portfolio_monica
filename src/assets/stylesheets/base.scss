@@ -103,7 +103,7 @@ h5 {
 // links
 a:link,
 a:visited {
-  transition: color 200ms ease, text-decoration 1.2s ease;
+  transition: color .6s ease, text-decoration 1.2s ease;
   color: var(--color-link);
   text-decoration: none;
   font-weight: 500;
@@ -129,12 +129,10 @@ a:active {
   outline: none;
 }
 
-// paragraph
 p {
   padding: 8px 0;
 }
 
-// button
 button {
   cursor: pointer;
   padding: 2px 14px;
@@ -187,12 +185,6 @@ button {
 
   @include largeScreens {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  > div {
-    min-height: 300px;
-    max-height: 300px;
-    overflow: hidden;
   }
 }
 
