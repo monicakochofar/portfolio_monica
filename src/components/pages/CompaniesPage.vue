@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { COMPANY_LIST } from './utils';
+import Modal from '../shared/modal.vue';
 const companyList = ref(COMPANY_LIST);
 
 function readMoreToggle(e) {
@@ -34,7 +35,7 @@ function readMoreToggle(e) {
             >{{ company.startDate }} - {{ company.endDate }}</span
           >
         </div>
-        <a :href="company.website" target="_blank">
+        <a class="companies__logo" :href="company.website" target="_blank">
           <icon :file-name="company.icon" />
         </a>
       </header>
@@ -67,7 +68,7 @@ function readMoreToggle(e) {
     animation: fadeIn 1.5s;
     align-self: start;
     min-height: 250px;
-    // max-height: 250px;
+    max-height: 250px;
     overflow: auto;
   }
 
