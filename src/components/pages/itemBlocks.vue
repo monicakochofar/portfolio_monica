@@ -36,13 +36,19 @@ function readMoreToggle(item) {
       <header class="block__header">
         <div class="block__title">
           <h5>{{ item.name }}</h5>
-          <span style="text-decoration: underline">{{ item.title }}</span>
-          <!-- <span>{{ item.location }}</span> -->
-          <span class="block__dates"
+          <span v-if="item.title" style="text-decoration: underline">{{
+            item.title
+          }}</span>
+          <span class="block__dates" v-if="item.startDate && item.endDate"
             >{{ item.startDate }} - {{ item.endDate }}</span
           >
         </div>
-        <a class="block__logo" :href="item.website" target="_blank">
+        <a
+          v-if="item.website"
+          class="block__logo"
+          :href="item.website"
+          target="_blank"
+        >
           <icon :file-name="item.icon" />
         </a>
       </header>
