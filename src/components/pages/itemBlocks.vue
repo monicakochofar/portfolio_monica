@@ -54,9 +54,7 @@ function readMoreToggle(item) {
       </header>
 
       <ul class="block__bullets">
-        <li class="block__bullet" v-for="bullet in item.bullets" :key="bullet">
-          {{ bullet }}
-        </li>
+        <li class="block__bullet" v-html="item.bullets[0]"></li>
       </ul>
       <div class="block__footer">
         <button class="block__read-more" @click="readMoreToggle(item)">
@@ -122,6 +120,7 @@ function readMoreToggle(item) {
   }
 
   &__bullets {
+    min-height: 84px;
     max-height: 84px;
     overflow: hidden;
     @include smallScreens {

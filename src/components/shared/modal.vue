@@ -62,7 +62,7 @@ watch(
       </div>
       <img v-if="props.image" class="modal-content__image" :src="props.image" />
       <ul class="modal-content__bullets">
-        <li v-for="bullet in props.bullets" :key="bullet">{{ bullet }}</li>
+        <li v-for="bullet in props.bullets" :key="bullet" v-html="bullet"></li>
       </ul>
     </div>
   </div>
