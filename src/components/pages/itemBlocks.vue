@@ -44,7 +44,7 @@ function readMoreToggle(item) {
       </ul>
       <div class="block__footer">
         <button class="block__read-more" @click="readMoreToggle(item)">
-          Read More
+          Learn More
         </button>
       </div>
     </section>
