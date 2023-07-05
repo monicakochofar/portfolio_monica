@@ -9,11 +9,19 @@ const props = defineProps({
   }
 });
 
-const modalData = ref({ title: '', bullets: [], showModal: false });
+const modalData = ref({
+  title: '',
+  bullets: [],
+  location: '',
+  image: '',
+  showModal: false
+});
 
 function readMoreToggle(item) {
   modalData.value.title = item.name;
   modalData.value.bullets = item.bullets;
+  modalData.value.location = item.location;
+
   modalData.value.showModal = true;
 }
 </script>
@@ -52,6 +60,8 @@ function readMoreToggle(item) {
     <Modal
       :title="modalData.title"
       :bullets="modalData.bullets"
+      :location="modalData.location"
+      :image="modalData.image"
       :showModal="modalData.showModal"
       @modal-closed="modalData.showModal = false"
     />

@@ -13,6 +13,14 @@ const props = defineProps({
   showModal: {
     type: Boolean,
     required: true
+  },
+  image: {
+    type: String,
+    required: false
+  },
+  location: {
+    type: String,
+    required: false
   }
 });
 const emit = defineEmits(['modal-closed']);
@@ -49,10 +57,11 @@ watch(
     <div class="modal-content" @click.stop>
       <button class="modal-content__close" @click="close">X</button>
       <h3>{{ props.title }}</h3>
+      <div v-if="props.location" class="modal-content__location">
+        <span class="color-heading">Location:</span> {{ props.location }}
+      </div>
+      <img v-if="props.image" class="modal-content__image" :src="props.image" />
       <ul class="modal-content__bullets">
-        <!-- {{
-          props.bullets
-        }} -->
         <li v-for="bullet in props.bullets" :key="bullet">{{ bullet }}</li>
       </ul>
     </div>
@@ -88,6 +97,10 @@ watch(
   max-width: 888px;
   min-height: 40%;
   border-radius: 12px;
+
+  &__location {
+    padding-bottom: 12px;
+  }
 
   &__close {
     position: absolute;

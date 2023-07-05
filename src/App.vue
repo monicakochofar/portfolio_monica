@@ -91,7 +91,7 @@ onMounted(() => {
       </section>
     </section>
 
-    <!-- TODO: create a filter -->
+    <!-- TODO: create a filter by date, tech stack, etc. -->
     <!-- <section class="container__colored" style="margin-top: 50px;">filter here</section> -->
 
     <!-- Router output -->

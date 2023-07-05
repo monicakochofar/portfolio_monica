@@ -155,6 +155,10 @@ button {
 }
 
 // common
+.color-heading {
+  color: var(--color-heading);
+}
+
 .container {
   margin: 50px 20px;
   max-width: 1600px;
