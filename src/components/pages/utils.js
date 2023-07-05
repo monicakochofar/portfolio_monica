@@ -21,7 +21,7 @@ export const COMPANY_LIST = [
     startDate: '10/2021',
     endDate: '05/2022',
     bullets: [
-      'Contributed to architectural and performance planning for application serving over <span class="bold">7000 call centre representatives</span>',
+      'Contributed to architectural and performance planning for a web application serving over <span class="bold">7000 call centre representatives</span>',
       'Regularly conducted code review sessions with team to deliver high quality code',
       '<span class="bold">Mentored junior developers</span> weekly to assist in their growth and learning',
       'Led Front-End development for projects using HTML, CSS/SASS, and Angular 10',
@@ -44,7 +44,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['AngularJS']
+    stack: ['Angular 2+']
   },
   {
     title: 'Full-Stack Developer',
@@ -53,7 +53,7 @@ export const COMPANY_LIST = [
     startDate: '01/2018',
     endDate: '09/2019',
     bullets: [
-      'Contributed to implementation and planning for a <span class="bold">high priority rework</span> of existing Rogers and Fido call centre and retail applications',
+      'Successfully executed and planned for a <span class="bold">high risk code migration</span> of existing Rogers and Fido call centre and retail legacy applications',
       'Designed <span class="bold">RESTful</span> api services and SSO architecture',
       'Developed using AngularJS, Spring Framework, Cassandra, and AkkaHTTP'
     ],

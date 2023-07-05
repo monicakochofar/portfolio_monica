@@ -24,7 +24,7 @@ const props = defineProps({
 @import '../../assets/stylesheets/variables';
 .tech-stack {
   display: flex;
-  gap: 10px;
+  gap: 2px;
   flex-direction: column;
 
   @include smallScreens {
