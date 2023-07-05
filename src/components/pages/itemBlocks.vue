@@ -20,7 +20,7 @@ const modalData = ref({
 function readMoreToggle(item) {
   modalData.value.title = item.name;
   modalData.value.bullets = item.bullets;
-  modalData.value.location = item.location;
+  modalData.value.location = item.location || '';
 
   modalData.value.showModal = true;
 }
@@ -44,7 +44,7 @@ function readMoreToggle(item) {
           </span>
         </div>
         <a
-          v-if="item.website"
+          v-if="item.website && item.icon"
           class="block__logo"
           :href="item.website"
           target="_blank"
