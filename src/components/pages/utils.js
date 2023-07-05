@@ -74,7 +74,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['Java']
+    stack: ['Java', 'JQuery']
   },
   {
     title: 'INTRO Associate (New Graduate Program)',
