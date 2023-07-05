@@ -104,6 +104,7 @@ function readMoreToggle(item) {
 
     @include smallScreens {
       min-height: 294px;
+      max-height: 294px;
     }
 
     &:hover {
