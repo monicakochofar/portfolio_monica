@@ -70,9 +70,6 @@ function readMoreToggle(item) {
 
 <style lang="scss" scoped>
 @import '../../assets/stylesheets/mixins';
-
-.item-blocks {
-}
 .block {
   .show-full {
     max-height: unset;
