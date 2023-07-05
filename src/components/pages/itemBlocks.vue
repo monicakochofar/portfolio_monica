@@ -98,13 +98,29 @@ function readMoreToggle(item) {
 
   &__item {
     display: flex;
+    opacity: 0;
     flex-direction: column;
-    animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s forwards;
     align-self: start;
     min-height: 264px;
     overflow: hidden;
-    transition: all 0.3s ease;
     justify-content: space-between;
+
+    &:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 1.1s;
+    }
+
+    &:nth-child(n + 4) {
+      animation-delay: 1.4s;
+    }
 
     @include smallScreens {
       min-height: 264px;

@@ -29,7 +29,8 @@ onMounted(() => {
           width="125"
           height="125"
         />
-        <div class="portfolio__navigation">
+        <!-- TODO: implement projects page -->
+        <!-- <div class="portfolio__navigation">
           Navigation
           <nav class="navigation-links">
             <RouterLink class="navigation-link" to="/">Companies</RouterLink>
@@ -37,7 +38,7 @@ onMounted(() => {
               >Projects</RouterLink
             >
           </nav>
-        </div>
+        </div> -->
         <div class="portfolio__links">
           Socials:
           <a
@@ -108,7 +109,7 @@ onMounted(() => {
 @import './assets/stylesheets/mixins';
 
 main {
-  animation: fadeIn 2s;
+  //animation: fadeIn 2s;
 }
 
 .portfolio {
