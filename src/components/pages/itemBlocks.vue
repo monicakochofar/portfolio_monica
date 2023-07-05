@@ -54,7 +54,9 @@ function readMoreToggle(item) {
       </header>
 
       <ul class="block__bullets">
-        <li v-for="bullet in item.bullets" :key="bullet">{{ bullet }}</li>
+        <li class="block__bullet" v-for="bullet in item.bullets" :key="bullet">
+          {{ bullet }}
+        </li>
       </ul>
       <div class="block__footer">
         <button class="block__read-more" @click="readMoreToggle(item)">
@@ -87,10 +89,15 @@ function readMoreToggle(item) {
     flex-direction: column;
     animation: fadeIn 1.5s;
     align-self: start;
-    min-height: 260px;
-    max-height: 260px;
+    min-height: 264px;
+    max-height: 264px;
     overflow: auto;
     transition: all 0.3s ease;
+
+    @include smallScreens {
+      min-height: 260px;
+      max-height: 260px;
+    }
 
     &:hover {
       transform: translate(2px, 2px);
@@ -117,6 +124,9 @@ function readMoreToggle(item) {
   &__bullets {
     max-height: 84px;
     overflow: hidden;
+    @include smallScreens {
+      max-height: 84px;
+    }
   }
 
   &__read-more {
