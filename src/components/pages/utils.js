@@ -97,7 +97,7 @@ export const COMPANY_LIST = [
     startDate: '08/2013',
     endDate: '08/2014',
     bullets: [
-      "Worked as a software developer and administrator for a web application based on Ruby on Rails, widely used by Bell's Wireless Technology Products team for their HSPA and LTE devices",
+      "Worked as a software developer and administrator for a web application based in Ruby on Rails, widely used by Bell's Wireless Technology Products team for their HSPA and LTE devices",
       'Ensured <span class="bold">security of sensitive company data</span> by implementing appropriate measures',
       'Created a script to parse through large QXDM log files and extract relevant data <span class="bold">using search algorithms</span> and developing a user interface',
       "Developed and presented an Android application to test Bell's Push-to-Talk application",
