@@ -28,7 +28,7 @@ function readMoreToggle(item) {
 </script>
 
 <template>
-  <div class="grid-3" style="margin-top: 50px">
+  <div class="grid-3 block" style="margin-top: 50px">
     <section
       class="block__item container__colored"
       v-for="item in props.itemList"
