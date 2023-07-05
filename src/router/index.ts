@@ -17,7 +17,15 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../components/pages/ProjectsPage.vue')
     }
-  ]
+  ],
+  scrollBehavior: (to, from, savedPosition) => {
+    if (to.path !== from.path) {
+      return {
+        el: '#router-view',
+        top: 30,
+      }
+    }
+  }
 })
 
 export default router

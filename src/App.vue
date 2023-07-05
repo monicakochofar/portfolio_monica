@@ -95,7 +95,7 @@ onMounted(() => {
     <!-- <section class="container__colored" style="margin-top: 50px;">filter here</section> -->
 
     <!-- Router output -->
-    <RouterView />
+    <RouterView id="router-view" />
   </main>
 </template>
 
