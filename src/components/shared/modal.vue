@@ -79,7 +79,7 @@ watch(
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: var(--color-background-soft);
+  background: rgba(1, 1, 1, 0.5);
   transition: all ease 0.5s;
   z-index: -1;
   &.show {
