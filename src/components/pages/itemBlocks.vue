@@ -34,29 +34,32 @@ function readMoreToggle(item) {
       v-for="item in props.itemList"
       :key="item.title"
     >
-      <header class="block__header">
-        <div class="block__title">
-          <h4>{{ item.name }}</h4>
-          <h5 v-if="item.title">
-            {{ item.title }}
-          </h5>
-          <span class="block__dates" v-if="item.startDate && item.endDate">
-            {{ item.startDate }} - {{ item.endDate }}
-          </span>
-        </div>
-        <a
-          v-if="item.website && item.icon"
-          class="block__logo"
-          :href="item.website"
-          target="_blank"
-        >
-          <icon :file-name="item.icon" />
-        </a>
-      </header>
+      <div>
+        <header class="block__header">
+          <div class="block__title">
+            <h4>{{ item.name }}</h4>
+            <h5 v-if="item.title">
+              {{ item.title }}
+            </h5>
+            <span class="block__dates" v-if="item.startDate && item.endDate">
+              {{ item.startDate }} - {{ item.endDate }}
+            </span>
+          </div>
+          <a
+            v-if="item.website && item.icon"
+            class="block__logo"
+            :href="item.website"
+            target="_blank"
+          >
+            <icon :file-name="item.icon" />
+          </a>
+        </header>
 
-      <ul class="block__bullets">
-        <li class="block__bullet" v-html="item.bullets[0]"></li>
-      </ul>
+        <ul class="block__bullets">
+          <li class="block__bullet" v-html="item.bullets[0]"></li>
+        </ul>
+      </div>
+
       <div class="block__footer">
         <button class="block__read-more" @click="readMoreToggle(item)">
           Learn More
@@ -101,10 +104,16 @@ function readMoreToggle(item) {
     min-height: 264px;
     overflow: hidden;
     transition: all 0.3s ease;
+    justify-content: space-between;
 
     @include smallScreens {
-      min-height: 294px;
-      max-height: 294px;
+      min-height: 264px;
+    }
+    @include mediumScreens {
+      min-height: 322px;
+    }
+    @include largeScreens {
+      min-height: 264px;
     }
 
     &:hover {
