@@ -1,5 +1,6 @@
 # portfolio
 
+Just a sweet and simple portfolio website to showcase projects and experiences.
 
 | Light theme  | Dark theme |
 | ------------- | ------------- |
