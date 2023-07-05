@@ -107,7 +107,7 @@ h5 {
 // links
 a:link,
 a:visited {
-  transition: color .6s ease, text-decoration 1.2s ease;
+  transition: color .6s ease, text-decoration 1.2s ease, transform .3s ease;
   color: var(--color-link);
   text-decoration: none;
   font-weight: 500;

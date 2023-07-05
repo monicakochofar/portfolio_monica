@@ -77,6 +77,11 @@ function readMoreToggle(item) {
     min-height: 260px;
     max-height: 260px;
     overflow: auto;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translate(2px, 2px);
+    }
   }
 
   &__header {
