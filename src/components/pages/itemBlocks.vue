@@ -88,6 +88,7 @@ function readMoreToggle(item) {
     color: var(--color-text);
     &:hover {
       color: var(--color-text);
+      transform: scale(1.2);
     }
   }
 
