@@ -186,10 +186,10 @@ main {
     a {
       height: 22px;
     }
-
-    .medium-logo {
-      fill: var(--color-background);
-    }
   }
+}
+// logo tweaks
+.medium-logo {
+  fill: var(--color-background);
 }
 </style>

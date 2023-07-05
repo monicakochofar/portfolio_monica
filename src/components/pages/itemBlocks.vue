@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, watchEffect } from 'vue';
 import Modal from '../shared/modal.vue';
+import TechStack from '../shared/techStack.vue';
 
 const props = defineProps({
   itemList: {
@@ -60,6 +61,7 @@ function readMoreToggle(item) {
         <button class="block__read-more" @click="readMoreToggle(item)">
           Learn More
         </button>
+        <TechStack />
       </div>
     </section>
 
@@ -80,6 +82,13 @@ function readMoreToggle(item) {
   .show-full {
     max-height: unset;
     overflow: scroll;
+  }
+
+  &__logo {
+    color: var(--color-text);
+    &:hover {
+      color: var(--color-text);
+    }
   }
 
   &__item {
@@ -130,14 +139,13 @@ function readMoreToggle(item) {
 
   &__read-more {
     width: 74px;
-    margin-top: 14px;
-    @include fontBodySmall;
   }
 
   &__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 14px;
   }
 }
 </style>
