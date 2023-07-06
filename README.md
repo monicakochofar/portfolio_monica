@@ -1,4 +1,4 @@
-# portfolio
+# Vue3/Vite portfolio
 
 Just a sweet and simple portfolio website to showcase projects and experiences.
 
