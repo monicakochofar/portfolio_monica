@@ -33,6 +33,7 @@ const props = defineProps({
 
   &__item {
     @include pill;
+    align-self: flex-end;
     font-weight: 500;
     background-color: var(--color-background-quiet);
   }
