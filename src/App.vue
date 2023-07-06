@@ -114,7 +114,7 @@ onMounted(() => {
   gap: 50px;
   flex-direction: column;
 
-  @include mediumScreens {
+  @include largeScreens {
     flex-direction: row;
     height: 368px;
   }
