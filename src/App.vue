@@ -40,7 +40,7 @@ onMounted(() => {
           </nav>
         </div> -->
         <div class="portfolio__links">
-          Socials:
+          Socials test:
           <a
             class="icon"
             id="github"
