@@ -1,5 +1,7 @@
 # Vue3/Vite portfolio
 
+https://monicakochofar.github.io/portfolio_monica/
+
 Just a sweet and simple portfolio website to showcase projects and experiences.
 
 | Dark theme  | Light theme |
