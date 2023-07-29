@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue';
+
+// TODO: create this page
 const projectList = ref([
   {
     title: 'Front-End Engineer',

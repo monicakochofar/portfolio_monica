@@ -12,7 +12,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'dribbble',
     website: 'https://dribbble.com/',
-    stack: ['Vue', 'Ruby on Rails']
+    stack: ['Vue', 'Ruby on Rails', 'JQuery']
   },
   {
     title: 'Senior Front-End Developer',

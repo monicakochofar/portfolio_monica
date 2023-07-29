@@ -26,6 +26,10 @@ const props = defineProps({
   display: flex;
   gap: 2px;
   flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-left: 20px;
 
   @include smallScreens {
     flex-direction: row;

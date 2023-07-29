@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watchEffect } from 'vue';
-import Modal from '../shared/modal.vue';
-import TechStack from '../shared/techStack.vue';
+import Modal from '../../shared/modal.vue';
+import TechStack from '../../shared/techStack.vue';
 
 const props = defineProps({
   itemList: {
@@ -81,7 +81,7 @@ function readMoreToggle(item) {
 </template>
 
 <style lang="scss" scoped>
-@import '../../assets/stylesheets/mixins';
+@import '../../../assets/stylesheets/mixins';
 .block {
   .show-full {
     max-height: unset;
@@ -129,7 +129,7 @@ function readMoreToggle(item) {
       min-height: 322px;
     }
     @include largeScreens {
-      min-height: 264px;
+      min-height: 326px;
     }
 
     &:hover {
@@ -168,6 +168,7 @@ function readMoreToggle(item) {
     display: flex;
     align-items: center;
     gap: 4px;
+    min-width: 96px;
   }
 
   &__footer {
