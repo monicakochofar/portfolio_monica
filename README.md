@@ -24,6 +24,9 @@ Coming Soon:
 
 ---
 
+## Tools used
+- used the following to achieve high enough contrast for colour palette: https://dequeuniversity.com/rules/axe/4.6/color-contrast
+
 This site was made with: 
 - Vue 3 (composition API). 
 - [Tippy.js](https://atomiks.github.io/tippyjs/) (for a few tooltips)
