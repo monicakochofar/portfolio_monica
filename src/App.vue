@@ -40,7 +40,7 @@ onMounted(() => {
           </nav>
         </div> -->
         <div class="portfolio__links">
-          Socials:
+          <span class="socials">Socials:</span>
           <a
             class="icon"
             id="github"
@@ -113,6 +113,11 @@ onMounted(() => {
   position: relative;
   gap: 50px;
   flex-direction: column;
+
+  .socials {
+    padding-top: 2px;
+    @include fontHeading5;
+  }
 
   @include largeScreens {
     flex-direction: row;
