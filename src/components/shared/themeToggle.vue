@@ -33,7 +33,7 @@ watchEffect(() => {
     @click="toggleTheme"
     aria-label="Toggle Theme"
     class="icon theme-toggle"
-    tabindex="1"
+    tabindex="0"
   >
     <div class="theme-toggle__background">
       <icon

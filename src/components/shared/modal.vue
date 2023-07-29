@@ -62,7 +62,7 @@ watch(
       >
         X
       </button>
-      <h3>{{ props.title }}</h3>
+      <span class="modal-content__title">{{ props.title }}</span>
       <div v-if="props.location" class="modal-content__location">
         <span class="color-heading">Location:</span> {{ props.location }}
       </div>
@@ -104,6 +104,10 @@ watch(
   max-width: 888px;
   min-height: 40%;
   border-radius: 12px;
+
+  &__title {
+    @include fontHeading3;
+  }
 
   &__location {
     padding-bottom: 12px;

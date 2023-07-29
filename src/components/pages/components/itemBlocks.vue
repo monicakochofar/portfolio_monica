@@ -49,6 +49,7 @@ function readMoreToggle(item) {
             v-if="item.website && item.icon"
             class="block__logo"
             :href="item.website"
+            :aria-label="item.icon"
             target="_blank"
           >
             <icon :file-name="item.icon" />
