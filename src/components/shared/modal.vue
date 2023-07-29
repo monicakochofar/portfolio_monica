@@ -55,7 +55,13 @@ watch(
 <template>
   <div class="overlay" @click="close">
     <div class="modal-content" @click.stop>
-      <button class="modal-content__close" @click="close">X</button>
+      <button
+        class="modal-content__close"
+        aria-label="Close Modal"
+        @click="close"
+      >
+        X
+      </button>
       <h3>{{ props.title }}</h3>
       <div v-if="props.location" class="modal-content__location">
         <span class="color-heading">Location:</span> {{ props.location }}

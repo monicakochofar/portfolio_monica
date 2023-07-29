@@ -44,6 +44,7 @@ onMounted(() => {
           <a
             class="icon"
             id="github"
+            aria-label="Github link"
             href="https://github.com/monicakochofar"
             target="_blank"
           >
@@ -52,6 +53,7 @@ onMounted(() => {
           <a
             class="icon"
             id="linkedin"
+            aria-label="Linkedin link"
             href="https://ca.linkedin.com/in/monicakochofar"
             target="_blank"
           >
@@ -60,6 +62,7 @@ onMounted(() => {
           <a
             id="medium"
             class="icon"
+            aria-label="Medium Blog link"
             href="https://mkay11.medium.com/"
             target="_blank"
           >

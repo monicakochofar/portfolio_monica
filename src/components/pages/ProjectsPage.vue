@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-// TODO: create this page
+// TODO: setup this page in src\router\index.ts when ready
 const projectList = ref([
   {
     title: 'Front-End Engineer',

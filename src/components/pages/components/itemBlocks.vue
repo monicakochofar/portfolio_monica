@@ -37,10 +37,10 @@ function readMoreToggle(item) {
       <div>
         <header class="block__header">
           <div class="block__title">
-            <h4>{{ item.name }}</h4>
-            <h5 v-if="item.title">
+            <span class="block__title-company">{{ item.name }}</span>
+            <span class="block__title-name" v-if="item.title">
               {{ item.title }}
-            </h5>
+            </span>
             <span class="block__dates" v-if="item.startDate && item.endDate">
               {{ item.startDate }} - {{ item.endDate }}
             </span>
@@ -61,7 +61,11 @@ function readMoreToggle(item) {
       </div>
 
       <div class="block__footer">
-        <button class="block__read-more" @click="readMoreToggle(item)">
+        <button
+          class="block__read-more"
+          aria-label="Learn more"
+          @click="readMoreToggle(item)"
+        >
           Learn More
           <icon file-name="popup" width="16" height="16" />
         </button>
@@ -148,6 +152,18 @@ function readMoreToggle(item) {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+  }
+
+  &__title-company {
+    margin-bottom: 10px;
+    color: var(--color-heading);
+    @include fontHeading4;
+  }
+
+  &__title-name {
+    margin-bottom: 10px;
+    color: var(--color-heading);
+    @include fontHeading5;
   }
 
   &__dates,

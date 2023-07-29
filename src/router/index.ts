@@ -9,14 +9,14 @@ const router = createRouter({
       name: 'home',
       component: CompaniesPage
     },
-    {
-      path: '/projects',
-      name: 'projects',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../components/pages/ProjectsPage.vue')
-    }
+    // { // TODO: add back when ready
+    //   path: '/projects',
+    //   name: 'projects',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import('../components/pages/ProjectsPage.vue')
+    // }
   ],
   scrollBehavior: (to, from, savedPosition) => {
     if (to.path !== from.path) {
