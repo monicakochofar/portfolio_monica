@@ -135,6 +135,9 @@ function readMoreToggle(item) {
     @include largeScreens {
       min-height: 326px;
     }
+    @include extraLargeScreens {
+      min-height: 264px;
+    }
 
     &:hover {
       transform: translate(2px, 2px);
