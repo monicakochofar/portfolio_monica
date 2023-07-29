@@ -134,6 +134,7 @@ function readMoreToggle(item) {
 
     &:hover {
       transform: translate(2px, 2px);
+      transition: transform 0.3s ease;
     }
   }
 
