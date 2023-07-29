@@ -9,7 +9,7 @@ const companyList = ref(COMPANY_LIST);
 
 <template>
   <div>
-    <SkillSummary />
+    <!-- <SkillSummary /> -->
     <ItemBlocks :itemList="companyList" />
   </div>
 </template>
