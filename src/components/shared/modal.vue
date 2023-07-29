@@ -106,11 +106,14 @@ watch(
   border-radius: 12px;
 
   &__title {
+    color: var(--color-heading);
     @include fontHeading3;
   }
 
   &__location {
+    color: var(--color-heading);
     padding-bottom: 12px;
+    @include fontHeading4;
   }
 
   &__image {
