@@ -19,11 +19,14 @@ onMounted(() => {
 
   document.body.addEventListener('theme-changed', () => {
     const bgColor =
-      localStorage.getItem('portfolioTheme') === 'dark' ? '#b8fabe' : '#265F46';
+      localStorage.getItem('portfolioTheme') === 'dark' ? '#282828' : '#F2F2F2';
     const textColor =
+      localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
+    const borderColor =
       localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
 
     chart.data.datasets[0].backgroundColor = bgColor;
+    chart.data.datasets[0].borderColor = borderColor;
     chart.options.scales.y.ticks.color = textColor;
     chart.options.scales.x.ticks.color = textColor;
     chart.options.scales.x.title.color = textColor;
@@ -35,8 +38,10 @@ onMounted(() => {
 function getChartData(skillYearMapping) {
   const ctx = document.getElementById('bar-chart');
   const bgColor =
-    localStorage.getItem('portfolioTheme') === 'dark' ? '#b8fabe' : '#265F46';
+    localStorage.getItem('portfolioTheme') === 'dark' ? '#282828' : '#F2F2F2';
   const textColor =
+    localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
+  const borderColor =
     localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
   const datasets = {
     labels: Object.keys(skillYearMapping),
@@ -45,7 +50,7 @@ function getChartData(skillYearMapping) {
         label: 'Years',
         data: Object.values(skillYearMapping),
         backgroundColor: bgColor,
-        borderColor: ['#181818'],
+        borderColor: borderColor,
         borderWidth: 1,
         borderRadius: 12,
         hoverBackgroundColor: '#181818'
@@ -58,7 +63,6 @@ function getChartData(skillYearMapping) {
 
 <template>
   <div class="container__colored skill-summary" style="margin-top: 50px">
-    <span class="skill-summary__title">Skills Summary</span>
     <div class="skill-summary__chart">
       <canvas id="bar-chart"></canvas>
     </div>
@@ -77,11 +81,6 @@ function getChartData(skillYearMapping) {
     height: 100% !important;
   }
 
-  &__title {
-    color: var(--color-heading);
-    @include fontHeading2;
-  }
-
   &__chart {
     margin: 0 auto;
     max-width: 954px;
@@ -92,7 +91,7 @@ function getChartData(skillYearMapping) {
     }
   }
 
-  @include mediumScreens {
+  @include largeScreens {
     display: block;
   }
 }

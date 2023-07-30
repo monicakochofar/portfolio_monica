@@ -81,14 +81,14 @@ onMounted(() => {
           <TypingEffect text="Hello, I'm Monica."></TypingEffect>
         </h1>
         <div class="portfolio__description">
-          <p>I'm a Front-End developer from Toronto.</p>
+          <p>I'm a Front-End developer from <span class="bold">Toronto&#129414</span>.</p>
           <p>
             Welcome to my personal website, which was built to showcase my
-            experiences and developed projects.
+            <span class="bold">experiences&#x26FA;</span> and developed <span class="bold">projects&#x1F3F0;</span>.
           </p>
           <p>
             Feel free to take look around, and reach out through any of my
-            social links if you're interested in working together.
+            <span class="bold">social links&#x2728;</span> if you're interested in working together.
           </p>
         </div>
       </section>
