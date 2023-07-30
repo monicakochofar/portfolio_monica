@@ -8,6 +8,8 @@ Just a sweet and simple portfolio website to showcase projects and experiences.
 | ------------- | ------------- |
 | ![image](https://github.com/monicakochofar/portfolio_monica/assets/7142197/3449e5f2-9871-4e76-9d36-1b8de38cf3cd) | ![image](https://github.com/monicakochofar/portfolio_monica/assets/7142197/88835828-45d8-4409-bad4-00babe9e90c5) |
 
+![image](https://github.com/monicakochofar/portfolio_monica/assets/7142197/282de0fd-f6fb-4076-9b4f-8d70737da248)
+
 ## Features:
 - tooltip on social link hover
 - button that allows user to choose between light and dark theme (and store last chosen option)
