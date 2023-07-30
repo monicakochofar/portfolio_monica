@@ -37,6 +37,8 @@ function getMonthsPerSkill(companyList) {
     });
   });
 
+  map['Java'] = map['Java'] - 2;
+
   return map;
 }
 
