@@ -142,9 +142,7 @@ export const getBarChartConfig = (data, textColor) => {
             color: textColor
           },
           title: {
-            display: true,
-            text: 'Years',
-            color: textColor
+            display: false
           }
         },
         y: {
