@@ -25,6 +25,8 @@ onMounted(() => {
 watchEffect(() => {
   const newTheme = isLightTheme.value ? 'light' : 'dark';
   document.body.setAttribute('data-theme', newTheme);
+
+  document.body.dispatchEvent(new CustomEvent('theme-changed'));
 });
 </script>
 

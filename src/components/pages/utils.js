@@ -126,3 +126,58 @@ export const COMPANY_LIST = [
     stack: ['Unix', 'C++']
   }
 ];
+
+export const getBarChartConfig = (data, textColor) => {
+  return {
+    type: 'bar',
+    data: data,
+    options: {
+      animation: {
+        duration: 2000
+      },
+      events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+      scales: {
+        x: {
+          ticks: {
+            color: textColor
+          },
+          title: {
+            display: true,
+            text: 'Years',
+            color: textColor
+          }
+        },
+        y: {
+          ticks: {
+            color: textColor
+          }
+        }
+      },
+      indexAxis: 'y',
+      // Elements options apply to all of the options unless overridden in a dataset
+      // In this case, we are setting the border of each horizontal bar to be 2px wide
+      elements: {
+        bar: {
+          borderWidth: 2
+        }
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+          labels: {
+            font: {
+              family: 'Inter',
+              size: 16
+            }
+          }
+        },
+        title: {
+          display: true,
+          text: 'Years of Professional Experience',
+          color: textColor
+        }
+      }
+    }
+  };
+};

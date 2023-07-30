@@ -1,28 +1,99 @@
 <script setup>
-import { ref, onMounted, watchEffect } from 'vue';
-import Modal from '../../shared/modal.vue';
-import TechStack from '../../shared/techStack.vue';
+import { onMounted } from 'vue';
+import Chart from 'chart.js/auto';
+import { getBarChartConfig } from '../utils';
 
 const props = defineProps({
-  itemList: {
-    type: Array,
+  skillMonthMap: {
+    type: Object,
     required: true
   }
 });
 
-const modalData = ref({
-  title: '',
-  bullets: [],
-  location: '',
-  image: '',
-  showModal: false
+onMounted(() => {
+  const chartData = getChartData(props.skillMonthMap);
+  const chart = new Chart(
+    chartData.ctx,
+    getBarChartConfig(chartData.datasets, chartData.textColor)
+  );
+
+  document.body.addEventListener('theme-changed', () => {
+    const bgColor =
+      localStorage.getItem('portfolioTheme') === 'dark' ? '#b8fabe' : '#265F46';
+    const textColor =
+      localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
+
+    chart.data.datasets[0].backgroundColor = bgColor;
+    chart.options.scales.y.ticks.color = textColor;
+    chart.options.scales.x.ticks.color = textColor;
+    chart.options.scales.x.title.color = textColor;
+    chart.options.plugins.title.color = textColor;
+    chart.update();
+  });
 });
+
+function getChartData(skillYearMapping) {
+  const ctx = document.getElementById('bar-chart');
+  const bgColor =
+    localStorage.getItem('portfolioTheme') === 'dark' ? '#b8fabe' : '#265F46';
+  const textColor =
+    localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
+  const datasets = {
+    labels: Object.keys(skillYearMapping),
+    datasets: [
+      {
+        label: 'Years',
+        data: Object.values(skillYearMapping),
+        backgroundColor: bgColor,
+        borderColor: ['#181818'],
+        borderWidth: 1,
+        borderRadius: 12,
+        hoverBackgroundColor: '#181818'
+      }
+    ]
+  };
+  return { ctx, datasets, textColor };
+}
 </script>
 
 <template>
-  <div class="container__colored" style="margin-top: 50px">test</div>
+  <div class="container__colored skill-summary" style="margin-top: 50px">
+    <span class="skill-summary__title">Skills Summary</span>
+    <div class="skill-summary__chart">
+      <canvas id="bar-chart"></canvas>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @import '../../../assets/stylesheets/mixins';
+
+.skill-summary {
+  display: none;
+  overflow: hidden;
+
+  #bar-chart {
+    width: 100% !important; // to override chartjs library values
+    height: 100% !important;
+  }
+
+  &__title {
+    color: var(--color-heading);
+    @include fontHeading2;
+  }
+
+  &__chart {
+    margin: 0 auto;
+    max-width: 954px;
+
+    @include mediumScreens {
+      max-height: 477px;
+      animation: fadeIn 2s forwards;
+    }
+  }
+
+  @include mediumScreens {
+    display: block;
+  }
+}
 </style>
