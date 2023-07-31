@@ -37,12 +37,13 @@ onMounted(() => {
 
 function getChartData(skillYearMapping) {
   const ctx = document.getElementById('bar-chart');
-  const bgColor =
-    localStorage.getItem('portfolioTheme') === 'dark' ? '#282828' : '#F2F2F2';
-  const textColor =
-    localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
-  const borderColor =
-    localStorage.getItem('portfolioTheme') === 'dark' ? '#F2F2F2' : '#181818';
+  const prefersDark =
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+    localStorage.getItem('portfolioTheme') === 'dark';
+  const bgColor = prefersDark ? '#282828' : '#F2F2F2';
+  const textColor = prefersDark ? '#F2F2F2' : '#181818';
+  const borderColor = prefersDark ? '#F2F2F2' : '#181818';
   const datasets = {
     labels: Object.keys(skillYearMapping),
     datasets: [

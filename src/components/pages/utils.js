@@ -142,7 +142,8 @@ export const getBarChartConfig = (data, textColor) => {
             color: textColor
           },
           title: {
-            display: false
+            display: false,
+            color: textColor
           }
         },
         y: {
