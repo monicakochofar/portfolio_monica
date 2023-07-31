@@ -37,8 +37,6 @@ function getMonthsPerSkill(companyList) {
     });
   });
 
-  map['Java'] = map['Java'] - 2; // TODO: if you're not monica, remove this tweak
-
   return map;
 }
 
