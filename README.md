@@ -30,7 +30,8 @@ Coming Soon:
 - used the following to achieve high enough contrast for colour palette: https://dequeuniversity.com/rules/axe/4.6/color-contrast
 
 This site was made with: 
-- Vue 3 (composition API). 
+- Vue 3 (composition API).
+- [ChartJs](https://www.chartjs.org/docs/latest/) (for Graph)
 - [Tippy.js](https://atomiks.github.io/tippyjs/) (for a few tooltips)
 
 ## To run locally:
