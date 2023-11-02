@@ -1,10 +1,24 @@
 export const COMPANY_LIST = [
   {
+    title: 'Senior Front-End Developer',
+    name: 'Button Inc.',
+    location: 'Remote',
+    startDate: '08/2023',
+    endDate: '10/2023',
+    bullets: [
+      'Created a <span class="bold">Vuejs</span> application from scratch leveraging <span class="bold">Pinia</span>, <span class="bold">Vite</span>, <span class="bold">JEST</span>, <span class="bold">MaterialUI</span>, and <span class="bold">RESTful</span> architecture.',
+      '<span class="bold">Led a team of two</span> to successfully deliver a product for the client within an urgent <span class="bold">two-week timeframe</span>, leading to a successful showcase to stakeholders and generated new consumer leads.'
+    ],
+    icon: 'button_inc',
+    website: 'https://www.button.is/',
+    stack: ['Vue']
+  },
+  {
     title: 'Front-End Engineer',
     name: 'Dribbble Holdings Ltd.',
     location: 'Remote',
     startDate: '05/2022',
-    endDate: 'Current',
+    endDate: '07/2023',
     bullets: [
       'Developed products for a self-promotion and social networking platform for digital designers serving over <span class="bold">4+ million visitors</span> each month',
       'Spearheaded discussions with product, QA, and backend developers to <span class="bold">convert product ideas into tangible deliveries</span>',
@@ -12,7 +26,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'dribbble',
     website: 'https://dribbble.com/',
-    stack: ['Vue', 'Ruby on Rails', 'jQuery']
+    stack: ['Vue', 'Ruby on Rails']
   },
   {
     title: 'Senior Front-End Developer',
@@ -59,7 +73,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['Java', 'AngularJS']
+    stack: ['Java', 'AngularJS', 'jQuery']
   },
   {
     title: 'Java J2EE Developer',
@@ -74,7 +88,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['Java']
+    stack: ['Java J2EE', 'jQuery']
   },
   {
     title: 'INTRO Associate (New Graduate Program)',
