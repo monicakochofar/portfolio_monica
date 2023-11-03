@@ -74,7 +74,7 @@ function getChartData(skillYearMapping) {
 </template>
 
 <style lang="scss" scoped>
-@import '../../../assets/stylesheets/mixins';
+@import '@/assets/stylesheets/mixins';
 
 .skill-summary {
   display: none;

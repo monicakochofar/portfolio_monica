@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted, watchEffect } from 'vue';
-import Modal from '../../shared/modal.vue';
-import TechStack from '../../shared/techStack.vue';
+import { ref } from 'vue';
+import Modal from '@/components/shared/modal.vue';
+import TechStack from '@/components/shared/techStack.vue';
 
 const props = defineProps({
   itemList: {
@@ -86,7 +86,7 @@ function readMoreToggle(item) {
 </template>
 
 <style lang="scss" scoped>
-@import '../../../assets/stylesheets/mixins';
+@import '@/assets/stylesheets/mixins';
 .block {
   .show-full {
     max-height: unset;

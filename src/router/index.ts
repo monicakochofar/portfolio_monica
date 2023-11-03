@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CompaniesPage from '../components/pages/CompaniesPage.vue'
+import CompaniesPage from '@/pages/CompaniesPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

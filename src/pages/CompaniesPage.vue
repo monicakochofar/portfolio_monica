@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-import ItemBlocks from './components/itemBlocks.vue';
-import SkillSummary from './components/skillSummary.vue';
+import ItemBlocks from '@/pages/components/itemBlocks.vue';
+import SkillSummary from '@/pages/components/skillSummary.vue';
 import { COMPANY_LIST } from './utils';
 
 const companyList = ref(COMPANY_LIST);
