@@ -1,3 +1,6 @@
+// NOTE: This file is used to configure static content and colours throughout the app according to your needs
+// feel free to replace my content with yours!
+
 export const COMPANY_LIST = [
   {
     title: 'Senior Front-End Developer',
