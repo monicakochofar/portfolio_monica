@@ -120,12 +120,12 @@ function positionSidebar() {
         </p>
         <p>
           Welcome to my personal website, which was built to showcase my
-          <span class="bold">experiences &#x26FA;</span> and developed
+          <span class="bold">experiences &#128640;</span> and developed
           <span class="bold">projects &#x1F3F0;</span>.
         </p>
         <p>
           Feel free to take look around, and reach out through any of my
-          <span class="bold">social links &#x2728;</span> if you're interested
+          <span class="bold">social links &#128241;</span> if you're interested
           in working together.
         </p>
       </div>
