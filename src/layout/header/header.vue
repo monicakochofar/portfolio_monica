@@ -1,9 +1,10 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, reactive } from 'vue';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import TypingEffect from '@/components/shared/typingEffect.vue';
 import ThemeToggle from '@/components/shared/themeToggle.vue';
+import { useDevice, DEVICE_SIZE } from '@/utils/getScreenSize.js';
 
 onMounted(() => {
   tippy('#github', {
@@ -15,7 +16,26 @@ onMounted(() => {
   tippy('#medium', {
     content: 'Medium'
   });
+  positionSidebar();
+  window.addEventListener('resize', positionSidebar);
 });
+
+const state = reactive({
+  showText: false,
+  device: useDevice()
+});
+
+function positionSidebar() {
+  state.device = useDevice();
+  if (
+    state.device.size === DEVICE_SIZE.s ||
+    state.device.size === DEVICE_SIZE.xs
+  ) {
+    state.showText = true;
+  } else {
+    state.showText = false;
+  }
+}
 </script>
 
 <template>
@@ -41,31 +61,45 @@ onMounted(() => {
       <div class="portfolio__links">
         <span class="socials">Socials:</span>
         <a
-          class="icon"
           id="github"
           aria-label="Github link"
           href="https://github.com/monicakochofar"
           target="_blank"
         >
-          <icon file-name="github-white" width="22" height="22" />
+          <div v-if="state.showText">Github</div>
+          <icon
+            v-else
+            class="icon"
+            file-name="github-white"
+            width="22"
+            height="22"
+          />
         </a>
         <a
-          class="icon"
           id="linkedin"
           aria-label="Linkedin link"
           href="https://ca.linkedin.com/in/monicakochofar"
           target="_blank"
         >
-          <icon file-name="linkedin" width="22" height="22" />
+          <div v-if="state.showText">Linkedin</div>
+          <icon
+            v-else
+            class="icon"
+            file-name="linkedin"
+            width="22"
+            height="22"
+          />
         </a>
         <a
           id="medium"
-          class="icon"
           aria-label="Medium Blog link"
           href="https://mkay11.medium.com/"
           target="_blank"
         >
+          <div v-if="state.showText">Medium</div>
           <icon
+            v-else
+            class="icon"
             custom-class="medium-logo"
             file-name="medium"
             width="22"
@@ -180,11 +214,12 @@ onMounted(() => {
     gap: 10px;
     margin-top: 16px;
     padding: 8px;
+    flex-wrap: wrap;
     background-color: var(--color-background-mute);
     width: 100%;
     max-width: 498px;
 
-    a {
+    .icon {
       height: 22px;
     }
     .medium-logo {

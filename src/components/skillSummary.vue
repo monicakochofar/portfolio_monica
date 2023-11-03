@@ -1,17 +1,30 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onBeforeMount, reactive, onMounted } from 'vue';
 import Chart from 'chart.js/auto';
-import { getBarChartConfig } from '@/portfolioConfig';
+import { getBarChartConfig } from '@/globalPortfolioConfig.js';
+import {
+  getMonthDiff,
+  getEndDate,
+  getYears
+} from '@/utils/dateRangeFormatter.js';
 
 const props = defineProps({
-  skillMonthMap: {
-    type: Object,
+  companyList: {
+    type: Array,
     required: true
   }
 });
 
+const state = reactive({
+  skillMonthMap: {}
+});
+
+onBeforeMount(() => {
+  state.skillMonthMap = getMonthsPerSkill(props.companyList);
+});
+
 onMounted(() => {
-  const chartData = getChartData(props.skillMonthMap);
+  const chartData = getChartData(state.skillMonthMap);
   const chart = new Chart(
     chartData.ctx,
     getBarChartConfig(chartData.datasets, chartData.textColor)
@@ -63,6 +76,32 @@ function getChartData(skillYearMapping) {
   };
   return { ctx, datasets, textColor };
 }
+
+function getMonthsPerSkill(companyList) {
+  const map = {};
+
+  companyList.forEach((item) => {
+    let { startDate, endDate, stack } = item;
+    if (startDate.length !== 7 || endDate.length !== 7) {
+      console.error(
+        'Please configure globalPortfolioConfig.js with the correct date format'
+      );
+      return;
+    }
+
+    startDate = new Date(startDate.slice(-4), startDate.slice(0, 2));
+    endDate = getEndDate(endDate);
+
+    const monthDiff = getMonthDiff(startDate, endDate);
+    const years = getYears(monthDiff);
+
+    stack.forEach((stackItem) => {
+      map[stackItem] = (map[stackItem] || 0) + years;
+    });
+  });
+
+  return map;
+}
 </script>
 
 <template>
@@ -100,4 +139,3 @@ function getChartData(skillYearMapping) {
   }
 }
 </style>
-../portfolioConfig

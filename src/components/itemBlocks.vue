@@ -38,22 +38,24 @@ function readMoreToggle(item) {
         <header class="block__header">
           <div class="block__title">
             <span class="block__title-company">{{ item.name }}</span>
-            <span class="block__title-name" v-if="item.title">
+            <a
+              v-if="item.website && item.icon"
+              class="block__logo"
+              :href="item.website"
+              :aria-label="item.icon"
+              target="_blank"
+            >
+              <icon :file-name="item.icon" />
+            </a>
+          </div>
+          <div class="block__details">
+            <span class="block__details-name" v-if="item.title">
               {{ item.title }}
             </span>
             <span class="block__dates" v-if="item.startDate && item.endDate">
               {{ item.startDate }} - {{ item.endDate }}
             </span>
           </div>
-          <a
-            v-if="item.website && item.icon"
-            class="block__logo"
-            :href="item.website"
-            :aria-label="item.icon"
-            target="_blank"
-          >
-            <icon :file-name="item.icon" />
-          </a>
         </header>
 
         <ul class="block__bullets">
@@ -148,26 +150,35 @@ function readMoreToggle(item) {
 
   &__header {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
   }
 
   &__title {
     display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &-company {
+      color: var(--color-heading);
+      @include fontHeading4;
+    }
+  }
+
+  &__details {
+    display: flex;
     flex-direction: column;
     padding-bottom: 10px;
-  }
+    width: 100%;
 
-  &__title-company {
-    margin-bottom: 10px;
-    color: var(--color-heading);
-    @include fontHeading4;
-  }
-
-  &__title-name {
-    margin-bottom: 10px;
-    color: var(--color-heading);
-    @include fontHeading5;
+    &-name {
+      margin-bottom: 10px;
+      color: var(--color-heading);
+      @include fontHeading5;
+    }
   }
 
   &__dates,

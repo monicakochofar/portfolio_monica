@@ -117,14 +117,12 @@ h5 {
 // links
 a:link,
 a:visited {
+  display: flex;
+  align-items: center;
   transition: color .6s ease, text-decoration 1.2s ease, transform .3s ease;
   color: var(--color-link);
-  text-decoration: none;
   font-weight: 500;
-  text-decoration-color: transparent;
-  &.icon {
-    color: unset;
-  }
+  color: unset;
   &.router-link-active {
     text-decoration: underline;
     text-decoration-color: var(--color-link);
@@ -134,9 +132,7 @@ a:visited {
 a:hover {
   color: var(--color-link-hover);
   text-decoration: none;
-  &.icon {
-    transform: translate(2px, 2px);
-  }
+  transform: translate(2px, 2px);
 }
 
 a:active {

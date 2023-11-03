@@ -1,6 +1,13 @@
 // NOTE: This file is used to configure static content and colours throughout the app according to your needs
 // feel free to replace my content with yours!
 
+export const DEVICE_BREAKPOINTS = {
+  widthXS: 300,
+  widthS: 500,
+  widthM: 814,
+  widthL: 1200
+};
+
 export const COMPANY_LIST = [
   {
     title: 'Senior Front-End Developer',
