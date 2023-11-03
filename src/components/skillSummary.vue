@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import Chart from 'chart.js/auto';
-import { getBarChartConfig } from '../utils';
+import { getBarChartConfig } from '@/portfolioConfig';
 
 const props = defineProps({
   skillMonthMap: {
@@ -100,3 +100,4 @@ function getChartData(skillYearMapping) {
   }
 }
 </style>
+../portfolioConfig

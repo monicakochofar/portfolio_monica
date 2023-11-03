@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-import ItemBlocks from '@/pages/components/itemBlocks.vue';
-import SkillSummary from '@/pages/components/skillSummary.vue';
-import { COMPANY_LIST } from './utils';
+import ItemBlocks from '@/components/itemBlocks.vue';
+import SkillSummary from '@/components/skillSummary.vue';
+import { COMPANY_LIST } from '@/portfolioConfig';
 
 const companyList = ref(COMPANY_LIST);
 const skillMonthMap = ref({});
@@ -17,7 +17,9 @@ function getMonthsPerSkill(companyList) {
   companyList.forEach((item) => {
     let { startDate, endDate, stack } = item;
     if (startDate.length !== 7 || endDate.length !== 7) {
-      console.error('Please configure utils.js with the correct date format');
+      console.error(
+        'Please configure portfolioConfig.js with the correct date format'
+      );
       return;
     }
 
