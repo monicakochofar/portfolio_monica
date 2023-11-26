@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, reactive, ref, onUpdated } from 'vue';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import TypingEffect from '@/components/shared/typingEffect.vue';
@@ -8,15 +8,20 @@ import { useDevice, DEVICE_SIZE } from '@/utils/getScreenSize.js';
 import SphereAnimation from './sphereAnimation.vue';
 
 const state = reactive({
-  showText: false,
+  showAsText: false,
+  showAnimation: false,
   device: useDevice(),
-  sphereWidth: 0,
-  sphereHeight: 0
+  animationWidth: 0,
+  animationHeight: 0
 });
+
+const showAsText = ref(false);
+const showAnimation = ref(false);
 
 const containerRef = ref(null);
 
 onMounted(() => {
+  // setup hover tip
   tippy('#github', {
     content: 'GitHub'
   });
@@ -26,34 +31,44 @@ onMounted(() => {
   tippy('#medium', {
     content: 'Medium'
   });
+
+  // setup event listeners
   onResizeWindowListener();
   window.addEventListener('resize', onResizeWindowListener);
 });
 
+onUpdated(() => {
+  //update animation size in px
+  state.animationWidth = containerRef.value.clientWidth;
+  state.animationHeight = containerRef.value.clientHeight;
+});
+
 function onResizeWindowListener() {
-  // update links based on device
+  // show certain elements of the screen based on device size
+  const isSmallDevice =
+    state.device.size === DEVICE_SIZE.s || state.device.size === DEVICE_SIZE.xs;
   state.device = useDevice();
-  if (
-    state.device.size === DEVICE_SIZE.s ||
-    state.device.size === DEVICE_SIZE.xs
-  ) {
-    state.showText = true;
-  } else {
-    state.showText = false;
-  }
+
+  const isMediumDevice = state.device.size === DEVICE_SIZE.m;
+
+  showAsText.value = isSmallDevice;
+
+  showAnimation.value = !isSmallDevice && !isMediumDevice;
 
   //update animation size in px
-  state.sphereWidth = containerRef.value.clientWidth;
-  state.sphereHeight = containerRef.value.clientHeight;
+  state.animationWidth = containerRef.value.clientWidth;
+  state.animationHeight = containerRef.value.clientHeight;
 }
 </script>
 
 <template>
   <section ref="containerRef" class="portfolio container__colored">
     <SphereAnimation
-      :width="state.sphereWidth"
-      :height="state.sphereHeight"
+      v-if="showAnimation"
+      :width="state.animationWidth"
+      :height="state.animationHeight"
     ></SphereAnimation>
+
     <ThemeToggle class="portfolio__theme-toggle" />
     <header class="portfolio__header">
       <icon
@@ -80,7 +95,7 @@ function onResizeWindowListener() {
           href="https://github.com/monicakochofar"
           target="_blank"
         >
-          <div v-if="state.showText">Github</div>
+          <div v-if="showAsText">Github</div>
           <icon
             v-else
             class="icon"
@@ -95,7 +110,7 @@ function onResizeWindowListener() {
           href="https://ca.linkedin.com/in/monicakochofar"
           target="_blank"
         >
-          <div v-if="state.showText">Linkedin</div>
+          <div v-if="showAsText">Linkedin</div>
           <icon
             v-else
             class="icon"
@@ -110,7 +125,7 @@ function onResizeWindowListener() {
           href="https://mkay11.medium.com/"
           target="_blank"
         >
-          <div v-if="state.showText">Medium</div>
+          <div v-if="showAsText">Medium</div>
           <icon
             v-else
             class="icon"
@@ -155,6 +170,7 @@ function onResizeWindowListener() {
   position: relative;
   gap: 50px;
   flex-direction: column;
+  height: 572px;
 
   .socials {
     padding-top: 2px;

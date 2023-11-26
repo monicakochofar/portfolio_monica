@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { onMounted, ref, reactive, toRef, watch } from 'vue';
+import { onMounted, ref, reactive, watch } from 'vue';
 
 const props = defineProps({
   width: {
@@ -16,40 +16,32 @@ const props = defineProps({
 });
 
 const webGL = ref(null);
-const state = reactive({
-  sizes: {
-    width: 0,
-    height: 0
-  }
-});
+let camera, renderer;
 
 watch(
   () => props.width,
-  (newVal) => {
-    console.log('watch props.width function called with args:', newVal);
+  () => {
+    updateSize();
   }
 );
 
-console.log('this.$parent', this);
+watch(
+  () => props.height,
+  () => {
+    updateSize();
+  }
+);
 
-// const triggerRefresh = toRef(props, 'width');
+const updateSize = () => {
+  //update camera
+  camera.aspect = props.width / props.height;
+  camera.updateProjectionMatrix();
 
-// watch(
-//   triggerRefresh,
-//   () => {
-//     console.log('prop updated');
-//     // state.sizes.width = props.width;
-//   },
-//   { immediate: true }
-// );
-
-// watch(props.height, () => {
-//   state.sizes.height = props.height;
-// });
+  //update renderer
+  renderer.setSize(props.width, props.height);
+};
 
 onMounted(() => {
-  state.sizes.width = props.width;
-  state.sizes.height = props.height;
   //scene
   const scene = new THREE.Scene();
 
@@ -67,16 +59,16 @@ onMounted(() => {
   scene.add(light);
 
   //camera
-  const camera = new THREE.PerspectiveCamera(
+  camera = new THREE.PerspectiveCamera(
     45,
-    state.sizes.width / state.sizes.height,
+    props.width / props.height,
     0.1,
     100
   );
   camera.position.z = 20;
   scene.add(camera);
-  const renderer = new THREE.WebGLRenderer({ canvas: webGL.value });
-  renderer.setSize(state.sizes.width, state.sizes.height);
+  renderer = new THREE.WebGLRenderer({ canvas: webGL.value });
+  renderer.setSize(props.width, props.height);
   renderer.setPixelRatio(2);
   renderer.render(scene, camera);
 
@@ -87,22 +79,6 @@ onMounted(() => {
   controls.enableZoom = false;
   controls.autoRotate = true;
   controls.autoRotateSpeed = 5;
-
-  //resize
-  window.addEventListener('resize', () => {
-    //update sizes
-    state.sizes.width = props.width;
-    state.sizes.height = props.height;
-    // state.sizes.width = window.innerWidth;
-    // state.sizes.height = window.innerHeight;
-
-    //update camera
-    camera.aspect = state.sizes.width / state.sizes.height;
-    camera.updateProjectionMatrix();
-
-    //update renderer
-    renderer.setSize(state.sizes.width, state.sizes.height);
-  });
 
   const animationLoop = () => {
     controls.update();
@@ -129,8 +105,8 @@ function addColor(mesh) {
   window.addEventListener('mousemove', (e) => {
     if (mouseDown) {
       const rgb = [
-        Math.round(e.pageX / state.sizes.width),
-        Math.round(e.pageY / state.sizes.height),
+        Math.round(e.pageX / props.width),
+        Math.round(e.pageY / props.height),
         150
       ];
       //animate
@@ -159,6 +135,5 @@ function addColor(mesh) {
 
 .webgl {
   border-radius: 16px;
-  // margin: -20px;
 }
 </style>
