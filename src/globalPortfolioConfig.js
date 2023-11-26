@@ -36,7 +36,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'dribbble',
     website: 'https://dribbble.com/',
-    stack: ['Vue', 'Ruby on Rails']
+    stack: ['Vue']
   },
   {
     title: 'Senior Front-End Developer',
@@ -83,7 +83,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['Java', 'AngularJS', 'jQuery']
+    stack: ['Java', 'AngularJS']
   },
   {
     title: 'Java J2EE Developer',
@@ -98,7 +98,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'rogers',
     website: 'https://www.rogers.com/',
-    stack: ['Java J2EE', 'jQuery']
+    stack: ['Java J2EE']
   },
   {
     title: 'INTRO Associate (New Graduate Program)',
@@ -132,7 +132,7 @@ export const COMPANY_LIST = [
     ],
     icon: 'bell',
     website: 'https://www.bell.ca/',
-    stack: ['jQuery', 'Ruby on Rails']
+    stack: ['Ruby on Rails']
   },
   {
     title: 'Outreachy Intern for GNOME',

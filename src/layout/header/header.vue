@@ -1,10 +1,20 @@
 <script setup>
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import TypingEffect from '@/components/shared/typingEffect.vue';
 import ThemeToggle from '@/components/shared/themeToggle.vue';
 import { useDevice, DEVICE_SIZE } from '@/utils/getScreenSize.js';
+import SphereAnimation from './sphereAnimation.vue';
+
+const state = reactive({
+  showText: false,
+  device: useDevice(),
+  sphereWidth: 0,
+  sphereHeight: 0
+});
+
+const containerRef = ref(null);
 
 onMounted(() => {
   tippy('#github', {
@@ -16,16 +26,12 @@ onMounted(() => {
   tippy('#medium', {
     content: 'Medium'
   });
-  positionSidebar();
-  window.addEventListener('resize', positionSidebar);
+  onResizeWindowListener();
+  window.addEventListener('resize', onResizeWindowListener);
 });
 
-const state = reactive({
-  showText: false,
-  device: useDevice()
-});
-
-function positionSidebar() {
+function onResizeWindowListener() {
+  // update links based on device
   state.device = useDevice();
   if (
     state.device.size === DEVICE_SIZE.s ||
@@ -35,11 +41,19 @@ function positionSidebar() {
   } else {
     state.showText = false;
   }
+
+  //update animation size in px
+  state.sphereWidth = containerRef.value.clientWidth;
+  state.sphereHeight = containerRef.value.clientHeight;
 }
 </script>
 
 <template>
-  <section class="portfolio container__colored">
+  <section ref="containerRef" class="portfolio container__colored">
+    <SphereAnimation
+      :width="state.sphereWidth"
+      :height="state.sphereHeight"
+    ></SphereAnimation>
     <ThemeToggle class="portfolio__theme-toggle" />
     <header class="portfolio__header">
       <icon
