@@ -178,10 +178,16 @@ function addColor(mesh) {
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/stylesheets/mixins';
 .animation-container {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
+
+  @include mediumScreens {
+    display: block;
+  }
 }
 
 .webgl {
