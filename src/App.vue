@@ -1,6 +1,11 @@
 <script setup>
 import Header from '@/layout/header/header.vue';
 import Footer from '@/layout/footer.vue';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  localStorage.setItem('portfolioTheme', 'dark');
+});
 </script>
 
 <template>

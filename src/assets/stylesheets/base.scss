@@ -46,7 +46,7 @@
 // default color variables for project (light theme)
 :root {
   --z-index-front: #{$zIndexFront};
- @extend .light-theme;
+ @extend .dark-theme;
 }
 
 body[data-theme="light"] {

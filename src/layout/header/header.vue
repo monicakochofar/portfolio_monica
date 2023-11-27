@@ -68,7 +68,7 @@ function onResizeWindowListener() {
       :height="state.animationHeight"
     ></SphereAnimation>
 
-    <ThemeToggle class="portfolio__theme-toggle" />
+    <!-- <ThemeToggle class="portfolio__theme-toggle" /> -->
     <header class="portfolio__header">
       <icon
         custom-class="site-logo"
