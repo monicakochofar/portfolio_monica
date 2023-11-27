@@ -10,6 +10,7 @@
 
 .light-theme {
   --color-background: #{$white};
+  --color-background-pure: #{$white};
   --color-background-soft: #{$whiteSoft};
   --color-background-mute: #{$whiteMute};
   --color-background-quiet: #{$white};
@@ -27,6 +28,7 @@
 
 .dark-theme {
   --color-background: #{$black};
+  --color-background-pure: #{$pureBlack};
   --color-background-soft: #{$blackSoft};
   --color-background-mute: #{$blackMute};
   --color-background-quiet: #{$blackQuiet};
@@ -169,7 +171,7 @@ button {
 
   &__colored {
     padding: 20px;
-    background: var(--color-background-soft);
+    background: var(--color-background-pure);
     border: 1px solid var(--color-border);
     border-radius: 16px;
     box-shadow: 10px 5px 5px var(--color-border);

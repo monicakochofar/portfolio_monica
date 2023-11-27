@@ -16,7 +16,7 @@ const props = defineProps({
 });
 
 const webGL = ref(null);
-let camera, renderer;
+let camera, renderer, scene;
 
 watch(
   () => props.width,
@@ -32,6 +32,52 @@ watch(
   }
 );
 
+onMounted(() => {
+  initAnimation();
+});
+
+document.body.addEventListener('theme-changed', () => {
+  updateBackground();
+});
+
+const updateBackground = () => {
+  let material;
+
+  if (!scene) {
+    return;
+  }
+  // setup ambient light
+  if (localStorage.getItem('portfolioTheme') === 'dark') {
+    const DARK_COLOR = '#000000';
+
+    if (scene.getObjectByName('ambientLight')) {
+      scene.remove(scene.getObjectByName('ambientLight'));
+    }
+
+    scene.background = new THREE.Color(DARK_COLOR);
+
+    material = new THREE.MeshStandardMaterial({
+      color: '#00ff83'
+    });
+  } else {
+    const LIGHT_COLOR = '#FFFFFF';
+
+    scene.background = new THREE.Color(LIGHT_COLOR);
+
+    const ambLight = new THREE.AmbientLight(LIGHT_COLOR, 1);
+    ambLight.name = 'ambientLight';
+    scene.add(ambLight);
+    material = new THREE.MeshStandardMaterial({
+      color: LIGHT_COLOR
+    });
+  }
+
+  // Update mesh with new shadow
+  const geometry = new THREE.SphereGeometry(3, 64, 64);
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+};
+
 const updateSize = () => {
   //update camera
   camera.aspect = props.width / props.height;
@@ -41,9 +87,9 @@ const updateSize = () => {
   renderer.setSize(props.width, props.height);
 };
 
-onMounted(() => {
+const initAnimation = () => {
   //scene
-  const scene = new THREE.Scene();
+  scene = new THREE.Scene();
 
   //sphere
   const geometry = new THREE.SphereGeometry(3, 64, 64);
@@ -52,6 +98,8 @@ onMounted(() => {
   });
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
+
+  updateBackground();
 
   //light
   const light = new THREE.PointLight(0xffffff, 70, 100, 1.7);
@@ -88,7 +136,7 @@ onMounted(() => {
   animationLoop();
 
   initTimeline(mesh);
-});
+};
 
 function initTimeline(mesh) {
   //timeline
