@@ -14,7 +14,7 @@ export const COMPANY_LIST = [
     name: 'Button Inc.',
     location: 'Remote',
     startDate: '08/2023',
-    endDate: '10/2023',
+    endDate: '11/2023',
     bullets: [
       'Created a <span class="bold">Vuejs</span> application from scratch leveraging <span class="bold">Pinia</span>, <span class="bold">Vite</span>, <span class="bold">JEST</span>, <span class="bold">MaterialUI</span>, and <span class="bold">RESTful</span> architecture.',
       '<span class="bold">Led a team of two</span> to successfully deliver a product for the client within an urgent <span class="bold">two-week timeframe</span>, leading to a successful showcase to stakeholders and generated new consumer leads.'
