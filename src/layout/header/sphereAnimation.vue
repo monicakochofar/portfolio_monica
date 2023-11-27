@@ -37,18 +37,19 @@ onMounted(() => {
 });
 
 document.body.addEventListener('theme-changed', () => {
-  updateBackground();
+  updateColorTheme();
 });
 
-const updateBackground = () => {
+const updateColorTheme = () => {
   let material;
 
   if (!scene) {
     return;
   }
-  // setup ambient light
+  // setup new lighting
   if (localStorage.getItem('portfolioTheme') === 'dark') {
     const DARK_COLOR = '#000000';
+    const GREEN_COLOR = '#00ff83';
 
     if (scene.getObjectByName('ambientLight')) {
       scene.remove(scene.getObjectByName('ambientLight'));
@@ -57,16 +58,18 @@ const updateBackground = () => {
     scene.background = new THREE.Color(DARK_COLOR);
 
     material = new THREE.MeshStandardMaterial({
-      color: '#00ff83'
+      color: GREEN_COLOR
     });
   } else {
     const LIGHT_COLOR = '#FFFFFF';
+    const GREEN_COLOR = '#00ff83';
 
     scene.background = new THREE.Color(LIGHT_COLOR);
 
-    const ambLight = new THREE.AmbientLight(LIGHT_COLOR, 1);
+    const ambLight = new THREE.AmbientLight(GREEN_COLOR, 1.5);
     ambLight.name = 'ambientLight';
     scene.add(ambLight);
+
     material = new THREE.MeshStandardMaterial({
       color: LIGHT_COLOR
     });
@@ -99,10 +102,10 @@ const initAnimation = () => {
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  updateBackground();
+  updateColorTheme();
 
   //light
-  const light = new THREE.PointLight(0xffffff, 70, 100, 1.7);
+  const light = new THREE.PointLight(0xffffff, 200, 100, 1.7);
   light.position.set(0, 10, 10);
   scene.add(light);
 

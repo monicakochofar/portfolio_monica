@@ -156,6 +156,10 @@ button {
 }
 
 // common
+.text-shadow {
+  text-shadow: 2px 2px 2px var(--color-background-mute);
+}
+
 .color-heading {
   color: var(--color-heading);
 }

@@ -48,7 +48,6 @@ function onResizeWindowListener() {
   const isSmallDevice =
     state.device.size === DEVICE_SIZE.s || state.device.size === DEVICE_SIZE.xs;
   state.device = useDevice();
-
   const isMediumDevice = state.device.size === DEVICE_SIZE.m;
 
   showAsText.value = isSmallDevice;
@@ -144,11 +143,12 @@ function onResizeWindowListener() {
       </h1>
       <div class="portfolio__description">
         <p>
-          I'm a Front-End developer from
+          I'm a <span class="text-shadow">Front-End developer from</span>
           <span class="bold">Toronto &#129414;</span>.
         </p>
         <p>
-          Welcome to my personal website, which was built to showcase my
+          Welcome <span class="text-shadow">to my personal website,</span> which
+          was built to showcase my
           <span class="bold">experiences &#128640;</span> and developed
           <span class="bold">projects &#x1F3F0;</span>.
         </p>
@@ -164,7 +164,6 @@ function onResizeWindowListener() {
 
 <style lang="scss" scoped>
 @import '@/assets/stylesheets/mixins';
-
 .portfolio {
   display: flex;
   position: relative;
