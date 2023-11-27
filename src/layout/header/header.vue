@@ -144,7 +144,7 @@ function onResizeWindowListener() {
       <div class="portfolio__description">
         <p>
           I'm a <span class="text-shadow">Front-End developer from</span>
-          <span class="bold">Toronto &#129414;</span>.
+          <span class="bold"> Toronto &#129414;</span>.
         </p>
         <p>
           Welcome <span class="text-shadow">to my personal website,</span> which
